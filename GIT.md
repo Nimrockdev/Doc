@@ -200,3 +200,9 @@ Subir Etiquetas
 git push origin --tags , envia los cambios y los tags
 
 
+echo "# Doc" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jsg8405/Doc.git
+git push -u origin master
