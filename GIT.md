@@ -206,3 +206,7 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/jsg8405/Doc.git
 git push -u origin master
+
+Ver diferencias  
+git log
+Para salir q+Enter
