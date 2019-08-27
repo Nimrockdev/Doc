@@ -89,7 +89,11 @@ Eliminar ficheros del repositorio
 
 Revertir ficheros no commiteados  
 
-	git checkout -- file
+	'git checkout -- file'
+
+Revertir todos los ficheros modificados  
+
+    git checkout .
 
 Deshacer el último commit no enviado con push  
 
@@ -104,7 +108,7 @@ Configurar nano para editar desde el terminal
 
 	git config --global core.editor nano
 
-Visualizar la configuracion del repositorio  
+Visualizar la configuración del repositorio  
 
 	git config --list
 
