@@ -1,16 +1,40 @@
-Ayuda
+Ayuda  
+
 	git help <command>
 	
-Directorio donde estoy
+Directorio donde estamos  
+
 	pwd
 
-Eliminar repositorio
-	rm -rf directoryname
-	o
-	cd carpeta/
-	rm -rf .git
+Eliminar repositorio  
 
- 
+    rm -rf directoryname
+    o
+    cd carpeta/
+    rm -rf .git
+
+Para iniciar proyecto  
+
+    git init
+
+Añadir Ficheros  
+
+	git add . 				#todos los ficheros
+	git add nombre_fichero
+	git add <dir> 			#añade recursivamente todos los archivos del dir.
+
+Diferencias  
+
+	git diff
+
+Estado del repositorio  
+
+	git status -s
+	
+Consolidar Cambios  
+
+	git commit -m 'mensaje de confirmacion'
+
 Crear rama  
 
 	git branch 								#lista ramas
@@ -37,36 +61,7 @@ Cambiar de rama
 		git pull							 # se bajan los cambios al repositorio local Ramas Remotas
 
 
-Para iniciar proyecto
-	git init
-Agregar todos los ficheros
-	git add .
 
-	git commit -m 'Datos del commit'
-	
-	git remote add
-	git push
-
-
-Diferencias  
-
-	git diff
-
-Inicializar repositorio, dentro del directorio
-
-	git init
-
-Añadir Ficheros  
-
-	git add . 				#todos los ficheros
-	git add nombre_fichero
-	git add <dir> 			#añade recursivamente todos los archivos del dir.
-Estado del repositorio  
-
-	git status -s
-	
-Consolidar Cambios
-	git commit -m 'mensaje de confirmacion'
 
 Ver la diferencia entre los archivos que están añadidos y los cambios que aún no están  
  
