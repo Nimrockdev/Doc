@@ -117,7 +117,6 @@ Si haces un commit y ves que te has equivocado, basta con que añadas con git ad
 	$ git commit --amend
 
 
-
 Revertir el último cambiado, al que se le ha hecho push  
 
 	git push -f origin last_commit:branch
