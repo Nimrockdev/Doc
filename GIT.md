@@ -1,3 +1,5 @@
+# GIT #
+
 Ayuda  
 
 	git help <command>
@@ -77,6 +79,9 @@ Cambiar de rama
 
 
 
+Ver cambios con ficheros afectados
+ 
+	git log -p
 
 Ver la diferencia entre los archivos que están añadidos y los cambios que aún no están  
  
@@ -89,6 +94,7 @@ Envío de cambios, enviar los cambios de copia local al repositorio
 Conectar a un repositorio local a uno remoto  
 
 	git remote add origin <server>	#Ruta del servidor
+	git remote add origin https://github.com/xx/xx.git
 
 Eliminar ficheros del repositorio
  
@@ -128,6 +134,10 @@ Clonar Repositorio donde estemos posicionados
 	git clone /path/to/repository
 
 	git clone <uri> namedir # clona usando como nombre de directorio namedir.
+
+Visualizar todos los repositorios remotos  
+
+	git remote -v
 
 
 Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras.
@@ -210,8 +220,8 @@ Obtener usuario y email
 
 Configurar GIT  
 
-	git config --global user.name "atareao"
-	git config --global user.email atareao@atareao.es
+	git config --global user.name "xxx"
+	git config --global user.email xxx@email.es
 
 Configurar nano para editar desde el terminal  
 
@@ -221,3 +231,35 @@ Visualizar la configuración del repositorio
 
 	git config --list
 
+
+
+## Cherry Pick ##
+
+Trasladar a la rama master un commit determinado de una rama sin mergear toda la rama. Solo 1 commit.
+
+	git cherry-pick 3cdd67fed7ce2265cb366787455da6fc34c022f5
+
+
+## Stash ##
+
+Para cambiar de la rama de trabajo a otra sin guardar las modificaciones no confirmadas
+	
+	git stash
+	git stash pop
+
+# VIM #
+
+Pero no demoremos más la solución. Aquí está la respuesta a cómo salir del editor Vim:
+
+	Pulsar la tecla Escape. El cursor se irá a la parte inferior (la zona de comandos)
+	Pulsar la secuencia de teclas :q
+	O también puedes pulsar :q! para salir del editor sin guardar los cambios
+	Pulsar la tecla Enter
+
+Recopilando y resumiendo los aportes de los comentarios. Primero pulsamos Esc para situarnos en el buffer inferior en modo normal, y:
+
+	:q → sale del archivo, si no tenemos cambios sin guardar sale sin más.
+	:q! → sale del archivo descartando los cambios no guardados.
+	:w → guarda los cambios del archivo, pero no sale de Vim para seguir editando el archivo.
+	:wq → guarda los cambios y sale de Vim.
+	😡 → igual que el anterior.
