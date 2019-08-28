@@ -35,11 +35,11 @@ Estado del repositorio
 
 Visualizar Ramas locales y remotas	
 
-    git branch. -a
+    git branch -a
 
 Visualizar Ramas remotas
 
-    git branch. -r
+    git branch -r
 
 Visualizar Otras formas
 	
