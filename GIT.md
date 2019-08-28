@@ -30,9 +30,23 @@ Diferencias
 Estado del repositorio  
 
 	git status -s
-	
-Consolidar Cambios  
 
+Visualizar Ramas locales y remotas	
+
+    git branch. -a
+
+Visualizar Ramas remotas
+
+    git branch. -r
+
+Visualizar Otras formas
+	
+	git ls-remote, muestra el SHA1 del último commit
+	git remote
+
+Consolidar Cambios  
+	
+	git commit  
 	git commit -m 'mensaje de confirmacion'
 
 Crear rama  
@@ -48,7 +62,8 @@ Crear rama
 											 Si no tienen un *, pueden borrarse, ya que significa que se han incorporado los cambios en la rama actual.
 	git branch --no-merged 					#lista ramas que no han sido incorporadas a la actual
 
-Cambiar de rama
+Cambiar de rama  
+
 	git checkout rama
 	
 		Ejemplo:
@@ -69,14 +84,13 @@ Ver la diferencia entre los archivos que están añadidos y los cambios que aún
 
 Envío de cambios, enviar los cambios de copia local al repositorio  
 
-	git push origin master 	#master es larama a al que quieres enviar tus cambios
+	git push origin master 	#master es la rama a al que quieres enviar tus cambios
 
 Conectar a un repositorio local a uno remoto  
 
 	git remote add origin <server>	#Ruta del servidor
 
 Eliminar ficheros del repositorio
-
  
 	git rm file
 	git commit -m 'comentario del delete' file
@@ -84,7 +98,7 @@ Eliminar ficheros del repositorio
 
 Revertir ficheros no commiteados  
 
-	'git checkout -- file'
+	git checkout -- file
 
 Revertir todos los ficheros modificados  
 
@@ -93,19 +107,6 @@ Revertir todos los ficheros modificados
 Deshacer el último commit no enviado con push  
 
 	git reset --hard HEAD~1
-
-Configurar GIT  
-
-	git config --global user.name "atareao"
-	git config --global user.email atareao@atareao.es
-
-Configurar nano para editar desde el terminal  
-
-	git config --global core.editor nano
-
-Visualizar la configuración del repositorio  
-
-	git config --list
 
 Revertir el último cambiado, al que se le ha hecho push  
 
@@ -150,21 +151,6 @@ Actualiza & Fusiona
 	Antes de fusionar los cambios, puedes revisarlos usando
 		git diff <source_branch> <target_branch>
 
-Etiquetas
-
-	Se recomienda crear etiquetas para cada nueva versión publicada de un software. Este concepto no es nuevo, ya que estaba disponible en SVN. Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando
-		git tag 1.0.0 1b2e1d63ff
-	1b2e1d63ff se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. 
-	Puedes obtener el commit id con
-		git log
-	también puedes usar menos caracteres que el commit id, pero debe ser un valor único. 
-
-
-Rreemplaza cambios locales.
-Este comando reemplaza los cambios en tu directorio de trabajo con el último contenido de HEAD. Los cambios que ya han sido agregados al Index, así como también los nuevos archivos, se mantendrán sin cambio.  
-
-	git checkout -- <filename>
-
 Por otro lado, si quieres deshacer todos los cambios locales y commits, puedes traer la última versión del servidor y apuntar a tu copia local principal de esta forma.
 
 	git fetch origin
@@ -192,20 +178,36 @@ Rebase y merge se diferencian en que merge mezcla dos puntos finales de dos snap
     git rebase -i # Rebase interactivo
 
 	
-
 Etiquetas
 
-Subir Etiquetas
-git push origin --tags , envia los cambios y los tags
+	Se recomienda crear etiquetas para cada nueva versión publicada de un  Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando
+		git tag 1.0.0 1b2e1d63ff
+
+	1b2e1d63ff se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. 
+
+	Puedes obtener el commit id con, para salir q+Enter
+		git log
+
+	también puedes usar menos caracteres que el commit id, pero debe ser un valor único. 
 
 
-echo "# Doc" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/jsg8405/Doc.git
-git push -u origin master
+	Subir Etiquetas
+	git push origin --tags 
 
-Ver diferencias  
-git log
-Para salir q+Enter
+Obtener usuario y email
+
+	git config  user.name
+	git config  user.email
+
+Configurar GIT  
+
+	git config --global user.name "atareao"
+	git config --global user.email atareao@atareao.es
+
+Configurar nano para editar desde el terminal  
+
+	git config --global core.editor nano
+
+Visualizar la configuración del repositorio  
+
+	git config --list
