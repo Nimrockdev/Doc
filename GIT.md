@@ -108,6 +108,16 @@ Deshacer el último commit no enviado con push
 
 	git reset --hard HEAD~1
 
+
+Si haces un commit y ves que te has equivocado, basta con que añadas con git add los cambios que faltaran en el área de preparación y hagas un nuevo commit, pero con el sufijo--amend. Esto hará que los cambios se incluyan en el último commit realizado, sin tener que crear uno adicional para corregir el error. Si quieres puedes incluir un -m XXXXXX y modificar el mensaje del mismo.
+
+
+	git commit -m 'Commit erroneo'
+	git add fichero_pendiente
+	$ git commit --amend
+
+
+
 Revertir el último cambiado, al que se le ha hecho push  
 
 	git push -f origin last_commit:branch
@@ -211,3 +221,4 @@ Configurar nano para editar desde el terminal
 Visualizar la configuración del repositorio  
 
 	git config --list
+
