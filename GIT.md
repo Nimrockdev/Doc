@@ -51,6 +51,10 @@ Consolidar Cambios
 	git commit  
 	git commit -m 'mensaje de confirmacion'
 
+Eliminar último Commit, si no se ha enviado al origen
+
+	git reset HEAD^ --hard
+
 Crear rama  
 
 	git branch 								#lista ramas
