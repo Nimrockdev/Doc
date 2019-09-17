@@ -55,6 +55,11 @@ Eliminar último Commit, si no se ha enviado al origen
 
 	git reset HEAD^ --hard
 
+Eliminar último Commit sin perder los cambios, si no se ha enviado al origen  
+
+	git reset HEAD^ --soft
+
+
 Crear rama  
 
 	git branch 								#lista ramas
@@ -253,17 +258,17 @@ Para cambiar de la rama de trabajo a otra sin guardar las modificaciones no conf
 
 # VIM #
 
-Pero no demoremos más la solución. Aquí está la respuesta a cómo salir del editor Vim:
+Salir del editor Vim:
 
-	Pulsar la tecla Escape. El cursor se irá a la parte inferior (la zona de comandos)
+	Pulsar la tecla Escape. 
 	Pulsar la secuencia de teclas :q
-	O también puedes pulsar :q! para salir del editor sin guardar los cambios
+	O
+	:q! sin guardar los cambios
 	Pulsar la tecla Enter
 
-Recopilando y resumiendo los aportes de los comentarios. Primero pulsamos Esc para situarnos en el buffer inferior en modo normal, y:
+Esc para situarnos en el buffer inferior en modo normal y:
 
 	:q → sale del archivo, si no tenemos cambios sin guardar sale sin más.
 	:q! → sale del archivo descartando los cambios no guardados.
 	:w → guarda los cambios del archivo, pero no sale de Vim para seguir editando el archivo.
 	:wq → guarda los cambios y sale de Vim.
-	😡 → igual que el anterior.
