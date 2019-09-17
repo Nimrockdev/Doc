@@ -1,4 +1,4 @@
-## Extensiones VSC en curso Node 
+## Extensiones VSC Node 
 - Docker
 - HTML CSS Support
 - JavaScript (ES6) code snippets
@@ -6,7 +6,7 @@
 - Terminal
 - TypeScript Importer
 
-## Extensiones curso Visual Studio Code  
+## Extensiones Visual Studio Code  
 - Bookmarks
 - Bracket Pair Colorizer
 - Color Highlight
