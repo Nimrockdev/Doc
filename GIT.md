@@ -59,6 +59,10 @@ Eliminar último Commit sin perder los cambios, si no se ha enviado al origen
 
 	git reset HEAD^ --soft
 
+Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto  
+
+	git reset HEAD^ --hard  
+	git push origin -f
 
 Crear rama  
 
