@@ -18,18 +18,19 @@ Permite actualziar registros de tablas.
 Permite eliminar privilegios de usuarios.
 
 `CREATE USER 'user1'@'localhost' IDENTIFIED by 'user1pas';`  
-`CREATE USER 'user2'@'localhost' IDENTIFIED by 'user2pas';`
+`CREATE USER 'user2'@'localhost' IDENTIFIED by 'user2pas';`  
 `show grants for 'user1'@'localhost'`  
+  
 Permiso de solo lectura  
 `grant select on sakila.actor to 'user1'@'localhost'`  
+  
 Permiso de solo lectura  
 `grant select on *.* to 'user1'@'localhost';`  
+  
 Revocar permisos  
-`revoke select on sakila.actor from 'user1'@'localhost';`
+`revoke select on sakila.actor from 'user1'@'localhost';`  
 `revoke select on *.* from 'user1'@'localhost';`
 
-`CREATE USER 'user2'@'localhost' IDENTIFIED by 'user2pas';`
-
-##Esto lo hemos hecho ya que daba error con root
-`CREATE USER 'foo'@'%' IDENTIFIED WITH mysql_native_password BY 'bar';`
+##Esto lo hemos hecho ya que daba error con root  
+`CREATE USER 'foo'@'%' IDENTIFIED WITH mysql_native_password BY 'bar';`  
 `grant ALL privileges on *.* to 'foo'@'%';`
