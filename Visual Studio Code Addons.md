@@ -16,3 +16,11 @@
 - Paste JSON as Code
 - TODO Highlight
 - TODO Tree
+
+
+# Comentarios  
+'V-1.39.2'  
+En bloque `Ctrl + May + A`
+
+Por linea  
+presione `Ctrl + K` para obtener acceso directo. presione `Ctrl + C` para confirmar o `Ctrl + C`
