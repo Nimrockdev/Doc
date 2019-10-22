@@ -1,5 +1,4 @@
 #Permisos  
-  
 ##ALL PRIVILEGES
 Permite acceder a todas las bases de datos.
 ##CREATE
@@ -16,7 +15,6 @@ Permite leer registros de tablas.
 Permite actualziar registros de tablas.
 ##GRANT OPTION
 Permite eliminar privilegios de usuarios.
-
 `CREATE USER 'user1'@'localhost' IDENTIFIED by 'user1pas';`  
 `CREATE USER 'user2'@'localhost' IDENTIFIED by 'user2pas';`  
 `show grants for 'user1'@'localhost'`  

@@ -23,4 +23,4 @@
 En bloque `Ctrl + May + A`
 
 Por linea  
-presione `Ctrl + K` para obtener acceso directo. presione `Ctrl + C` para confirmar o `Ctrl + C`
+presione `Ctrl + K` para obtener acceso directo. presione `Ctrl + C` para confirmar o `Ctrl + U`
