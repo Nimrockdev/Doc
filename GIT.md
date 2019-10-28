@@ -276,3 +276,14 @@ Esc para situarnos en el buffer inferior en modo normal y:
 	:q! → sale del archivo descartando los cambios no guardados.
 	:w → guarda los cambios del archivo, pero no sale de Vim para seguir editando el archivo.
 	:wq → guarda los cambios y sale de Vim.
+
+
+#Credenciales
+
+Para evitar que git pregunte cada vez por las credenciales, activamos el store. la próxima vez que las utilicemos quedarán grabadas.
+
+	git config --global credential.helper store
+
+Si queremos que caduque en una hora
+
+	git config --global credential.helper 'cache --timeout=3600'
