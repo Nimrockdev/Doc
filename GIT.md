@@ -44,7 +44,11 @@ Visualizar Ramas remotas
 Visualizar Otras formas
 	
 	git ls-remote, muestra el SHA1 del último commit
-	git remote
+	git remote  
+	
+Visualizar las rutas de subida y descarga  
+
+    git remote -v
 
 Consolidar Cambios  
 	
