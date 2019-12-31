@@ -24,6 +24,9 @@ Las imagenes Docker son plantillas (que incluyen una aplicación, los binarios y
 ##Listar imagenes disponibles en local  
 `docker images`
 
+##Listar imagenes, buscando por nombre
+`docker images | grep mongo`
+
 ##Listar imagenes disponibles en local  
 `docker images --help`
 
