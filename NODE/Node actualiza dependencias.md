@@ -1,4 +1,5 @@
-#Actualiza las dependiencas  
+#Actualiza las dependencias  
+
 `ncu -u --packageFile package.json`  
 
 `npm install` 
