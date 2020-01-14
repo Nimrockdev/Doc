@@ -1,9 +1,14 @@
-#Actualiza las dependiencas
+#Actualiza las dependencias  
 
-npm i -g npm-check-updates
+`ncu -u --packageFile package.json`  
 
-npm-check-updates -u
+`npm install` 
 
-npm intall
+#Deprecated
+    npm i -g npm-check-updates
 
-[https://ed.team/blog/evita-errores-actualizando-tus-dependencias-de-npm](https://ed.team/blog/evita-errores-actualizando-tus-dependencias-de-npm)
+    npm-check-updates -u
+
+    npm install
+
+    [https://ed.team/blog/evita-errores-actualizando-tus-dependencias-de-npm](https://ed.team/blog/evita-errores-actualizando-tus-dependencias-de-npm)
