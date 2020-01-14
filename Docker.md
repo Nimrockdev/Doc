@@ -110,3 +110,18 @@ CMD /usr/sbin/apache2ctl -D FOREGROUND
 
 ##Para salir de un contenedor sin cerrarlo  
 `ctrl+p+q`
+
+##Creamos imagen de apache centos
+`docker build --tag apache-centos -f  DockerFile .`
+o
+`docker build --tag apache-centos:apache -f  DockerFile .`
+
+El DockerFile:  
+Archivo donde definimos la configuración de la imagen.  
+
+`FROM centos:7
+
+RUN yum install httpd -y
+
+CMD apachectl DFOREGROUND
+`
