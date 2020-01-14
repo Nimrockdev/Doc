@@ -19,7 +19,10 @@ Las imagenes Docker son plantillas (que incluyen una aplicación, los binarios y
 `docker pull ubuntu`
 
 ##Eliminar imagen  
-`docker rmi <nombre_imagen>:<TAG>`
+`docker rmi <nombre_imagen>:<TAG>`  
+
+##Eliminar contenedor  
+`docker rm -fv apache`  
 
 ##Listar imagenes disponibles en local  
 `docker images`
@@ -108,6 +111,9 @@ CMD /usr/sbin/apache2ctl -D FOREGROUND
 ##Arrancar Imagen, sin cambiar el puerto  
 `docker run miweb`
 
+#Historial de cambios en una imagen
+`docker history apache-centos:apache`   
+
 ##Para salir de un contenedor sin cerrarlo  
 `ctrl+p+q`
 
@@ -117,7 +123,19 @@ o
 `docker build --tag apache-centos:apache -f  DockerFile .`
 
 El DockerFile:  
-Archivo donde definimos la configuración de la imagen.  
+Archivo donde definimos la configuración de la imagen. 
+
+FROM = Especificamos con que SO queremos trabajar.  
+RUN =  Instrucciones que podemos ejecutar.  
+COPY/ADD = Copiar archivos.
+ENV
+WORKDIR
+EXPOSE
+LABEL
+USER
+VOLUME
+CMD = Comando a ejecutar
+
 
 `FROM centos:7
 
@@ -125,3 +143,4 @@ RUN yum install httpd -y
 
 CMD apachectl DFOREGROUND
 `
+`docker run -d -p 80:80 apache-centos:apache`  
