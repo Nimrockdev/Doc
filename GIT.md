@@ -33,6 +33,8 @@ Estado del repositorio
 
 	git status -s
 
+
+
 Visualizar Ramas locales y remotas	
 
     git branch -a
@@ -46,9 +48,13 @@ Visualizar Otras formas
 	git ls-remote, muestra el SHA1 del último commit
 	git remote  
 	
-Visualizar las rutas de subida y descarga  
+Visualizar los diferentes repositorios  
 
     git remote -v
+
+Eliminar repositorios  
+
+	git remote rm origin
 
 Consolidar Cambios  
 	
