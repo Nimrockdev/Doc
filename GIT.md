@@ -34,14 +34,13 @@ Estado del repositorio
 	git status -s
 
 
-
 Visualizar Ramas locales y remotas	
 
-    git branch -a
+    	git branch -a
 
 Visualizar Ramas remotas
 
-    git branch -r
+    	git branch -r
 
 Visualizar Otras formas
 	
@@ -50,7 +49,7 @@ Visualizar Otras formas
 	
 Visualizar los diferentes repositorios  
 
-    git remote -v
+    	git remote -v
 
 Eliminar repositorios  
 
@@ -74,32 +73,57 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 	git reset HEAD^ --hard  
 	git push origin -f
 
-Crear rama  
+## Crear rama  
 
 	git branch 								#lista ramas
 	git branch <nombre-rama> 				#crea rama. Puntero al commit actual
 	git checkout -b <nombre-rama> 			#crea y cambia de rama
-	git merge <rama> 						#Mezcla la rama actual con <rama> remota
-	git branch -d <rama> 					#elimina la rama
-	git push origin --delete <branchName> 	#Elimina una rama del servidor
-	git branch -v 							#lista ramas mostrando último commit
-	git branch --merged 					#lista ramas que han sido mezcladas con la actual.
-											 Si no tienen un *, pueden borrarse, ya que significa que se han incorporado los cambios en la rama actual.
-	git branch --no-merged 					#lista ramas que no han sido incorporadas a la actual
+	git merge <rama> 				#Mezcla la rama actual con <rama> remota
+	git branch -d <rama> 				#elimina la rama
+	git push origin --delete <branchName> 		#Elimina una rama del servidor
+	git branch -v 					#lista ramas mostrando último commit
+	git branch --merged 				#lista ramas que han sido mezcladas con la actual.
+							 Si no tienen un *, pueden borrarse, ya que significa que se han 								 incorporado los cambios en la rama actual.
+	git branch --no-merged 				#lista ramas que no han sido incorporadas a la actual
 
-Cambiar de rama  
+## Cambiar de rama  
 
 	git checkout rama
 	
 		Ejemplo:
 		git branch origin/prod       		 # en caso de no tenerla se crea la rama origin/prod
 		git branch -a                		 # comprobar que realmente estamos en master
-		git branch --track prod origin/prod  # si no lo tenemos ya asocia prod a origin/prod
+		git branch --track prod origin/prod  	 # si no lo tenemos ya asocia prod a origin/prod
 		git checkout prod            		 # cambiamos a la rama prod
 		git merge master             		 # se merguean los cambios desde master a prod
 		git push                     		 # se suben los cambios del repositorio local al remoto
-		git pull							 # se bajan los cambios al repositorio local Ramas Remotas
+		git pull				 # se bajan los cambios al repositorio local Ramas Remotas
 
+## En el momento de trabajar:
+
+   * Rama **master**: cualquier commit que pongamos en esta rama debe estar preparado para subir a producción.
+   	- Todos los commits tienen que ser optimos para subir a producción.
+	- Cada vez que se incorpora código a master se genera una nueva versión.	
+   * Rama **develop**: rama en la que está el código que conformará la siguiente versión planificada del proyecto.
+    - Trabajar en rama develop, para uso interno, rama de trabajo de donde salen las todas las ramas que existentes.
+    
+   ----
+	* Feature, rama que parte y se incorpora siempre a develop.
+        * Desarrollo de nuevas características.  
+	    * Nombre: si no se usa git flow, fte_...
+   ----
+    * Release, se origina en develop y se incorpora a master y develop.
+   	   * Corrigen el el código antes de pasar a master.
+	   * Nombre: si no se usa git flow, rle_...  
+       nombre rls_xxx
+   ----
+	* Hotfix, se origina a partir de la rama master, se incorpra a master y develop.
+   	   * Corrigen errores en producción.
+	   * Nombre: si no se usa git flow, htx_...
+   ----
+	* Test, rama para testng
+        *  Nombre: No esta en gitflow, tsg_---
+   ----
 
 
 Ver cambios con ficheros afectados
@@ -178,7 +202,7 @@ La rama master es la rama "por defecto" cuando creas un repositorio.
 	Una rama nueva no estará disponible para los demás a menos que subas (push) la rama a tu repositorio remoto
 		git push origin <branch>
 
-Actualiza & Fusiona
+## Actualiza & Fusiona
 
 	Para actualizar tu repositorio local al commit más nuevo, ejecuta
 		git pull	
@@ -198,7 +222,7 @@ Por otro lado, si quieres deshacer todos los cambios locales y commits, puedes t
 	git fetch origin
 	git reset --hard origin/master
 
-REBASE
+## REBASE
 Rebase y merge se diferencian en que merge mezcla dos puntos finales de dos snapshots y rebase aplica cada uno de los cambios a la rama en la que se hace el rebase. No lo uses en repos publicos con mas colaboradores, porque todos los demas tendrán que hacer re-merges.  
 
 
@@ -219,10 +243,9 @@ Rebase y merge se diferencian en que merge mezcla dos puntos finales de dos snap
 
     git rebase -i # Rebase interactivo
 
-	
-Etiquetas
+## Etiquetas
 
-	Se recomienda crear etiquetas para cada nueva versión publicada de un  Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando
+Se recomienda crear etiquetas para cada nueva versión publicada de un  Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando
 		git tag 1.0.0 1b2e1d63ff
 
 	1b2e1d63ff se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. 
@@ -236,24 +259,23 @@ Etiquetas
 	Subir Etiquetas
 	git push origin --tags 
 
-Obtener usuario y email
+## Obtener usuario y email
 
 	git config  user.name
 	git config  user.email
 
-Configurar GIT  
+## Configurar GIT  
 
 	git config --global user.name "xxx"
 	git config --global user.email xxx@email.es
 
-Configurar nano para editar desde el terminal  
+## Configurar nano para editar desde el terminal  
 
 	git config --global core.editor nano
 
-Visualizar la configuración del repositorio  
+## Visualizar la configuración del repositorio  
 
 	git config --list
-
 
 
 ## Cherry Pick ##
@@ -265,7 +287,7 @@ Trasladar a la rama master un commit determinado de una rama sin mergear toda la
 
 ## Stash ##
 
-Para cambiar de la rama de trabajo a otra sin guardar las modificaciones no confirmadas
+Para cambiar de la rama de trabajo a otra sin guardar las modificaciones no confirmadas.
 	
 	git stash
 	git stash pop
@@ -288,7 +310,7 @@ Esc para situarnos en el buffer inferior en modo normal y:
 	:wq → guarda los cambios y sale de Vim.
 
 
-#Credenciales
+## Credenciales
 
 Para evitar que git pregunte cada vez por las credenciales, activamos el store. la próxima vez que las utilicemos quedarán grabadas.
 
@@ -297,3 +319,8 @@ Para evitar que git pregunte cada vez por las credenciales, activamos el store. 
 Si queremos que caduque en una hora
 
 	git config --global credential.helper 'cache --timeout=3600'
+	
+	
+	
+	
+>En desarrollo, disculpad las molestias
