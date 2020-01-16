@@ -2,11 +2,11 @@
 
 Ayuda  
 
-	git help <command>
+    git help <command>
 	
 Directorio donde estamos  
 
-	pwd
+    pwd
 
 Eliminar repositorio  
 
@@ -21,57 +21,57 @@ Para iniciar proyecto
 
 Añadir Ficheros  
 
-	git add . 				#todos los ficheros
-	git add nombre_fichero
-	git add <dir> 			#añade recursivamente todos los archivos del dir.
+    git add . 				#todos los ficheros
+    git add nombre_fichero
+    git add <dir> 			#añade recursivamente todos los archivos del dir.
 
 Diferencias  
 
-	git diff
+    git diff
 
 Estado del repositorio  
 
-	git status -s
+    git status -s
 
 
 Visualizar Ramas locales y remotas	
 
-    	git branch -a
+    git branch -a
 
 Visualizar Ramas remotas
 
-    	git branch -r
+    git branch -r
 
 Visualizar Otras formas
 	
-	git ls-remote, muestra el SHA1 del último commit
-	git remote  
+    git ls-remote, muestra el SHA1 del último commit
+    git remote  
 	
 Visualizar los diferentes repositorios  
 
-    	git remote -v
+    git remote -v
 
 Eliminar repositorios  
 
-	git remote rm origin
+    git remote rm origin
 
 Consolidar Cambios  
 	
-	git commit  
-	git commit -m 'mensaje de confirmacion'
+    git commit  
+    git commit -m 'mensaje de confirmacion'
 
 Eliminar último Commit, si no se ha enviado al origen
 
-	git reset HEAD^ --hard
+    git reset HEAD^ --hard
 
 Eliminar último Commit sin perder los cambios, si no se ha enviado al origen  
 
-	git reset HEAD^ --soft
+    git reset HEAD^ --soft
 
 Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto  
 
-	git reset HEAD^ --hard  
-	git push origin -f
+    git reset HEAD^ --hard  
+    git push origin -f
 
 ## Crear rama  
 
@@ -128,30 +128,30 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 
 Ver cambios con ficheros afectados
  
-	git log -p
+    git log -p
 
 Ver la diferencia entre los archivos que están añadidos y los cambios que aún no están  
  
-	git diff
+    git diff
 
 Envío de cambios, enviar los cambios de copia local al repositorio  
 
-	git push origin master 	#master es la rama a al que quieres enviar tus cambios
+    git push origin master 	#master es la rama a al que quieres enviar tus cambios
 
 Conectar a un repositorio local a uno remoto  
 
-	git remote add origin <server>	#Ruta del servidor
-	git remote add origin https://github.com/xx/xx.git
+    git remote add origin <server>	#Ruta del servidor
+    git remote add origin https://github.com/xx/xx.git
 
 Eliminar ficheros del repositorio
  
-	git rm file
-	git commit -m 'comentario del delete' file
-	git push
+    git rm file
+    git commit -m 'comentario del delete' file
+    git push
 
 Revertir ficheros no commiteados  
 
-	git checkout -- file
+    git checkout -- file
 
 Revertir todos los ficheros modificados  
 
@@ -159,7 +159,7 @@ Revertir todos los ficheros modificados
 
 Deshacer el último commit no enviado con push  
 
-	git reset --hard HEAD~1
+    git reset --hard HEAD~1
 
 
 Si haces un commit y ves que te has equivocado, basta con que añadas con git add los cambios que faltaran en el área de preparación y hagas un nuevo commit, pero con el sufijo--amend. Esto hará que los cambios se incluyan en el último commit realizado, sin tener que crear uno adicional para corregir el error. Si quieres puedes incluir un -m XXXXXX y modificar el mensaje del mismo.
@@ -184,7 +184,7 @@ Clonar Repositorio donde estemos posicionados
 
 Visualizar todos los repositorios remotos  
 
-	git remote -v
+    git remote -v
 
 
 Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras.
@@ -204,27 +204,31 @@ La rama master es la rama "por defecto" cuando creas un repositorio.
 
 ## Actualiza & Fusiona
 
-	Para actualizar tu repositorio local al commit más nuevo, ejecuta
-		git pull	
-	
-	en tu directorio de trabajo para bajar y fusionar los cambios remotos.
-	Para fusionar otra rama a tu rama activa (por ejemplo master), utiliza
-		git merge <branch>
+Para actualizar tu repositorio local al commit más nuevo, ejecuta  
 
-	en ambos casos git intentará fusionar automáticamente los cambios. Desafortunadamente, no siempre será posible y se podrán producir conflictos. Tú eres responsable de fusionar esos conflictos manualmente al editar los archivos mostrados por git. Después de modificarlos, necesitas marcarlos como fusionados con
-		git add <filename>
+    git pull	
 	
-	Antes de fusionar los cambios, puedes revisarlos usando
-		git diff <source_branch> <target_branch>
+en tu directorio de trabajo para bajar y fusionar los cambios remotos.
+Para fusionar otra rama a tu rama activa,
 
-Por otro lado, si quieres deshacer todos los cambios locales y commits, puedes traer la última versión del servidor y apuntar a tu copia local principal de esta forma.
+    git merge <branch>
+
+en ambos casos git intentará fusionar automáticamente los cambios. Es posible que se produzcan conflictos. Somos los responsables de solucionar los conflictos manualmente al editar los archivos mostrados por git. Después de editarlos, los marcaremos como editados
+
+    git add <filename>
+	
+Antes de fusionar podemos revisar los cambios
+
+    git diff <source_branch> <target_branch>
+
+Para deshacer todos los cambios locales y commits realizados, podemos recuperar la versión del servidor y apuntar a tu copia local principal de esta forma.
 
 	git fetch origin
 	git reset --hard origin/master
 
 ## REBASE
 Rebase y merge se diferencian en que merge mezcla dos puntos finales de dos snapshots y rebase aplica cada uno de los cambios a la rama en la que se hace el rebase. No lo uses en repos publicos con mas colaboradores, porque todos los demas tendrán que hacer re-merges.  
-
+>PE
 
     git checkout <una rama>
     git rebase master # aplica todos los cambios de <una rama> a master
