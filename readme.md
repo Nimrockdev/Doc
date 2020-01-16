@@ -1,6 +1,6 @@
 #DOC
 
-Manuales de uso con ideas y comandos interesantes.
+Manuales de uso y comandos interesantes:
 
 - MYSQL
 - Node.js
