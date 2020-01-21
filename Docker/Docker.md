@@ -95,15 +95,6 @@ Las imagenes Docker son plantillas (que incluyen una aplicación, los binarios y
 
 --change='CMD ["apache2ctl", "-D FOREGROUND"]' -c "EXPOSE 85"
 
-
-###Ejemplo de Dockerfile  
-FROM ubuntu:16.04
-MAINTAINER Javier Sánchez Gómez 
-RUN apt-get update 
-RUN apt-get -y install apache2
-EXPOSE 81
-CMD /usr/sbin/apache2ctl -D FOREGROUND
-
 ##Crear Imagen  
 `docker build -t miweb /home/javier/miweb/`
 ##Arrancar Imagen, se cambia el puerto  
@@ -119,8 +110,8 @@ CMD /usr/sbin/apache2ctl -D FOREGROUND
 
 ##Creamos imagen de apache centos
 `docker build --tag apache-centos -f  DockerFile .`
-o
-`docker build --tag apache-centos:apache -f  DockerFile .`
+`docker build --tag apache-centos:apache -f  DockerFile .`  
+`docker build -t nginx:v1 --file='DockerFile2' .`
 
 El DockerFile:  
 Archivo donde definimos la configuración de la imagen. 
@@ -128,19 +119,14 @@ Archivo donde definimos la configuración de la imagen.
 FROM = Especificamos con que SO queremos trabajar.  
 RUN =  Instrucciones que podemos ejecutar.  
 COPY/ADD = Copiar archivos.
-ENV
-WORKDIR
-EXPOSE
-LABEL
-USER
-VOLUME
+ENV, contenido de dprueba
+WORKDIR, cambia el directorio por defecto
+EXPOSE, expone un puerto distinto
+LABEL, se indica el numero de versión, es una etiqueta
+USER, que usuario ejecuta la tarea,
+VOLUME, guarda los datos para que sean persistentes
 CMD = Comando a ejecutar
 
 
-`FROM centos:7
-
-RUN yum install httpd -y
-
-CMD apachectl DFOREGROUND
-`
-`docker run -d -p 80:80 apache-centos:apache`  
+`docker run -d -p 80:80 apache-centos:apache` 
+`docker run -d -p 80:80 nginx:v1` 
