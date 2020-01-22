@@ -112,7 +112,7 @@ Las imagenes Docker son plantillas (que incluyen una aplicación, los binarios y
 `docker build --tag apache-centos -f  DockerFile .`
 `docker build --tag apache-centos:apache -f  DockerFile .`  
 `docker build -t nginx:v1 --file='DockerFile2' .`
-
+`docker build --tag apache:php -f DockerFile3 .`
 El DockerFile:  
 Archivo donde definimos la configuración de la imagen. 
 
@@ -130,3 +130,10 @@ CMD = Comando a ejecutar
 
 `docker run -d -p 80:80 apache-centos:apache` 
 `docker run -d -p 80:80 nginx:v1` 
+`docker run -d -p 80:80 apache:php`
+`docker run -d -p 80:80 apache:boostrap`  
+`docker run -d -p 443:443 apache:sslOK`
+
+Creación de certificados
+
+´openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout docker.key -out docker.crt´
