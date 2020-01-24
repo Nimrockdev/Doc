@@ -21,9 +21,9 @@ Para iniciar proyecto
 
 Añadir Ficheros  
 
-    git add . 				#todos los ficheros
+    git add .			#todos los ficheros
     git add nombre_fichero
-    git add <dir> 			#añade recursivamente todos los archivos del dir.
+    git add <dir>		#añade recursivamente todos los archivos del dir.
 
 Diferencias  
 
@@ -32,7 +32,6 @@ Diferencias
 Estado del repositorio  
 
     git status -s
-
 
 Visualizar Ramas locales y remotas	
 
@@ -75,8 +74,8 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 
 ## Crear rama  
 
-	git branch 								#lista ramas
-	git branch <nombre-rama> 				#crea rama. Puntero al commit actual
+	git branch 					#lista ramas
+	git branch <nombre-rama> 			#crea rama. Puntero al commit actual
 	git checkout -b <nombre-rama> 			#crea y cambia de rama
 	git merge <rama> 				#Mezcla la rama actual con <rama> remota
 	git branch -d <rama> 				#elimina la rama
@@ -101,26 +100,30 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 
 ## En el momento de trabajar:
 
-   * Rama **master**: cualquier commit que pongamos en esta rama debe estar preparado para subir a producción.
+![GIT Flow](https://docs.microsoft.com/es-es/azure/architecture/framework/_images/hotfix-branches.png)
+
+[docs.microsoft.com](https://docs.microsoft.com/es-es/azure/architecture/framework/_images/hotfix-branches.png)
+
+   * Rama **master**: Rama de producción.
    	- Todos los commits tienen que ser optimos para subir a producción.
 	- Cada vez que se incorpora código a master se genera una nueva versión.	
    * Rama **develop**: rama en la que está el código que conformará la siguiente versión planificada del proyecto.
-    - Trabajar en rama develop, para uso interno, rama de trabajo de donde salen las todas las ramas que existentes.
+    	- Trabajar en rama develop, para uso interno, rama de trabajo de donde salen las todas las ramas que existentes.
     
    ----
 	* Feature, rama que parte y se incorpora siempre a develop.
         * Desarrollo de nuevas características.  
 	   * Nombre: si no se usa git flow, fte_...
    ----
-    * Release, se origina en develop y se incorpora a master y develop.
-   	   * Corrigen el el código antes de pasar a master.
+    * Release, se origina en develop con el fin de preparar una versión final y su testeo
+   	   * Corrigen el código antes de pasar a master.
 	   * Nombre: si no se usa git flow, rle_...  
    ----
 	* Hotfix, se origina a partir de la rama master, se incorpra a master y develop.
    	   * Corrigen errores en producción.
 	   * Nombre: si no se usa git flow, htx_...
    ----
-	* Test, rama para testng
+	* Test, rama para testing, equivalente a release
         *  Nombre: No esta en gitflow, tsg_---
    ----
 
@@ -298,21 +301,7 @@ Para cambiar de la rama de trabajo a otra sin guardar las modificaciones no conf
 
 # VIM #
 
-Salir del editor Vim:
-
-	Pulsar la tecla Escape. 
-	Pulsar la secuencia de teclas :q
-	O
-	:q! sin guardar los cambios
-	Pulsar la tecla Enter
-
-Esc para situarnos en el buffer inferior en modo normal y:
-
-	:q → sale del archivo, si no tenemos cambios sin guardar sale sin más.
-	:q! → sale del archivo descartando los cambios no guardados.
-	:w → guarda los cambios del archivo, pero no sale de Vim para seguir editando el archivo.
-	:wq → guarda los cambios y sale de Vim.
-
+Para conflictos, revisar el Doc/VIM
 
 ## Credenciales
 
