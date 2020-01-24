@@ -110,12 +110,11 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
    ----
 	* Feature, rama que parte y se incorpora siempre a develop.
         * Desarrollo de nuevas características.  
-	    * Nombre: si no se usa git flow, fte_...
+	   * Nombre: si no se usa git flow, fte_...
    ----
     * Release, se origina en develop y se incorpora a master y develop.
    	   * Corrigen el el código antes de pasar a master.
 	   * Nombre: si no se usa git flow, rle_...  
-       nombre rls_xxx
    ----
 	* Hotfix, se origina a partir de la rama master, se incorpra a master y develop.
    	   * Corrigen errores en producción.
@@ -124,6 +123,7 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 	* Test, rama para testng
         *  Nombre: No esta en gitflow, tsg_---
    ----
+
 
 
 Ver cambios con ficheros afectados
