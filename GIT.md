@@ -271,10 +271,16 @@ Se recomienda crear etiquetas para cada nueva versión publicada de un  Puedes c
 	git config  user.name
 	git config  user.email
 
-## Configurar GIT  
+## Configurar GIT para todos los repositorios 
 
 	git config --global user.name "xxx"
 	git config --global user.email xxx@email.es
+	
+## Configurar GIT para el repositorio actual
+
+	git config user.email xxx@email.es
+	git config user.name user.name "xxx"
+	
 
 ## Configurar nano para editar desde el terminal  
 
