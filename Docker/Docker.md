@@ -26,7 +26,7 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 ##Eliminar contenedor  
 `docker rm -fv apache`  
 
-##Eliminar todos los contenedores
+##Eliminar todos los contenedores  
 `docker rm -fv $(docker ps -aq)`  
 
 ##Listar imagenes disponibles en local  
@@ -68,15 +68,15 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 ##Arrancar Jenkins de forma interactiva, i= interactivo, t= terminal y COMMAND  
 `docker exec -ti jenkins-xxx bash`  
 
-##Arrancar MYSQL
-`docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" mysql`
+##Arrancar MYSQL  
+`docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" mysql`  
 `docker run -d -p 3333:3306 --name my-db2 -e "MYSQL_ROOT_PASSWORD=1234567" -e "MYSQL_DATABASE=docker-db" -e "MYSQL_USER=docker-user" -e "MYSQL_PASSWORD=7654321" mysql
 `
 
-##MYSQL, para ver el estado del contenedor
+##MYSQL, para ver el estado del contenedor  
 `docker logs -f my-db1`
 
-##MYSQL, para ver los datos 
+##MYSQL, para ver los datos  
 `docker inspect my-db1`  
 
 ##MYSQL, conectarse
@@ -91,7 +91,7 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 `docker attach BASH`
 
 ###Conectarse a un contenedor mediante COMMAND  
-`docker attach ID`
+`docker attach ID`  
 `docker attach 922`
 
 ##Detener un contenedor  
