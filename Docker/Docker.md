@@ -18,12 +18,16 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 
 ##Instalación  
 `docker pull ubuntu`
+`docker pull mysql`
 
 ##Eliminar imagen  
 `docker rmi <nombre_imagen>:<TAG>`  
 
 ##Eliminar contenedor  
 `docker rm -fv apache`  
+
+##Eliminar todos los contenedores
+`docker rm -fv $(docker ps -aq)`  
 
 ##Listar imagenes disponibles en local  
 `docker images`
@@ -62,7 +66,23 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 `docker run -i -t ubuntu bash`  
 
 ##Arrancar Jenkins de forma interactiva, i= interactivo, t= terminal y COMMAND  
-`docker exec -ti jenkins-xxx bash`
+`docker exec -ti jenkins-xxx bash`  
+
+##Arrancar MYSQL
+`docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" mysql`
+`docker run -d -p 3333:3306 --name my-db2 -e "MYSQL_ROOT_PASSWORD=1234567" -e "MYSQL_DATABASE=docker-db" -e "MYSQL_USER=docker-user" -e "MYSQL_PASSWORD=7654321" mysql
+`
+
+##MYSQL, para ver el estado del contenedor
+`docker logs -f my-db1`
+
+##MYSQL, para ver los datos 
+`docker inspect my-db1`  
+
+##MYSQL, conectarse
+`mysql -u root -h 172.17.0.2 -p1234567`  
+`mysql -u root -p1234567 -h 127.0.0.2 --port 3333`  
+`mysql -u docker-user -p7654321 -h 127.0.0.2 --port 3333`
 
 ##Arrancar un contenedor por ID  
 `c0955d59b756`
