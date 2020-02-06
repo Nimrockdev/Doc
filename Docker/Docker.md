@@ -6,9 +6,6 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 `docker info`
 `docker version`
 
-`docker pull hello-world`
-`docker run hello-word`
-
 ##Inspeccionar una imagen  
 `docker inspect <nombre_imagen>`
 
@@ -16,9 +13,15 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 `docker search ubuntu`  
 `docker search jenkins`
 
-##Instalación  
-`docker pull ubuntu`
+##Instalación, algunos ejemplos 
+`docker pull hello-world`    
+`docker pull ubuntu`  
 `docker pull mysql`
+`docker pull mongo`  
+`docker pull postgres`  
+`docker pull jenkins`
+
+`docker run hello-word`
 
 ##Eliminar imagen  
 `docker rmi <nombre_imagen>:<TAG>`  
@@ -50,6 +53,9 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 ##Container en ejecutados  
 `docker ps -a`
 
+##Estadísticas  
+`docker stats nombreImagen`
+
 ##Estructura del contenedor, se pasa el run con el nombre del contenedor más el comando  
 `docker run ubuntu ls`
 
@@ -59,30 +65,44 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 ##Arrancar Ubuntu de forma interactiva  
 `docker run -it ubuntu`
 
-##Arrancar Ubuntu de forma interactiva con nombre  
+###Arrancar Ubuntu de forma interactiva con nombre  
 `docker run --name jsgvm -it ubuntu`
 
-##Arrancar Ubuntu de forma interactiva, i= interactivo, t= terminal y COMMAND  
+###Arrancar Ubuntu de forma interactiva, i= interactivo, t= terminal y COMMAND  
 `docker run -i -t ubuntu bash`  
 
-##Arrancar Jenkins de forma interactiva, i= interactivo, t= terminal y COMMAND  
+##JENKINS  
+`docker run -d -p 7070:8080 --name jenkins jenkins`  
+
+###Jenkins de forma interactiva, i= interactivo, t= terminal y COMMAND  
 `docker exec -ti jenkins-xxx bash`  
 
 ##Arrancar MYSQL  
 `docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" mysql`  
-`docker run -d -p 3333:3306 --name my-db2 -e "MYSQL_ROOT_PASSWORD=1234567" -e "MYSQL_DATABASE=docker-db" -e "MYSQL_USER=docker-user" -e "MYSQL_PASSWORD=7654321" mysql
-`
+`docker run -d -p 3333:3306 --name my-db2 -e "MYSQL_ROOT_PASSWORD=1234567" -e "MYSQL_DATABASE=docker-db" -e "MYSQL_USER=docker-user" -e "MYSQL_PASSWORD=7654321" mysql`
 
-##MYSQL, para ver el estado del contenedor  
+###MYSQL, para ver el estado del contenedor  
 `docker logs -f my-db1`
 
-##MYSQL, para ver los datos  
+###MYSQL, para ver los datos  
 `docker inspect my-db1`  
 
-##MYSQL, conectarse
+###MYSQL, conectarse
 `mysql -u root -h 172.17.0.2 -p1234567`  
 `mysql -u root -p1234567 -h 127.0.0.2 --port 3333`  
 `mysql -u docker-user -p7654321 -h 127.0.0.2 --port 3333`
+
+##MONGO
+`docker run -d --name my-mongo -p 27017:27017 mongo:latest`  
+
+##POSTGRES  
+`docker run -d --name postgres -e "POSTGRES_PASSWORD=1234567" -e "POSTGRES_USER=docker" -e "POSTGRES_DB=docker-db" -p 5432:5432 postgres`  
+
+###POSTGRES, para acceder al bash
+`docker exec -ti postgres bash`  
+
+###POSTGRES, para conectarnos a la base de datos con usuario
+`psql -d docker-db -U docker`
 
 ##Arrancar un contenedor por ID  
 `c0955d59b756`
@@ -96,7 +116,7 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 
 ##Detener un contenedor  
 `docker stop ID`  
-`docker stop 922...`
+`docker stop 922...`  
 `docker stop NAME`
 
 ##Arrancar un contenedor  
@@ -110,8 +130,9 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 
 ##Ubuntu, si queremos utilizar algo, antes actualizar las dependencias  
 `apt-get update`  
+
 ##Ejemplos
-`apt-get install nano`
+`apt-get install nano`  
 `apt-get install git`
 
 ##Crear Imagen a partir de contenedor  
@@ -125,8 +146,8 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 ##Crear Imagen  
 `docker build -t miweb /home/javier/miweb/`
 ##Arrancar Imagen, se cambia el puerto  
-`docker run -d -p 85:80 miweb`
-`docker run -d -p 8080:8080 jenkins`
+`docker run -d -p 85:80 miweb`  
+`docker run -d -p 8080:8080 jenkins`  
 Cuando se solicte el puerto 85, se redirecciona al 80 que es el del contenedor
 
 ##Arrancar Imagen, sin cambiar el puerto  
@@ -141,32 +162,33 @@ Cuando se solicte el puerto 85, se redirecciona al 80 que es el del contenedor
 ##Creamos imagen de apache centos
 `docker build --tag apache-centos -f  DockerFile .`
 `docker build --tag apache-centos:apache -f  DockerFile .`  
-`docker build -t nginx:v1 --file='DockerFile2' .`
-`docker build --tag apache:php -f DockerFile3 .`
+`docker build -t nginx:v1 --file='DockerFile2' .`  
+`docker build --tag apache:php -f DockerFile3 .`  
+
 El DockerFile:  
 Archivo donde definimos la configuración de la imagen. 
 
 FROM = Especificamos con que SO queremos trabajar.  
 RUN =  Instrucciones que podemos ejecutar.  
 COPY/ADD = Copiar archivos.
-ENV, contenido de dprueba
-WORKDIR, cambia el directorio por defecto
-EXPOSE, expone un puerto distinto
-LABEL, se indica el numero de versión, es una etiqueta
-USER, que usuario ejecuta la tarea,
-VOLUME, guarda los datos para que sean persistentes
-CMD = Comando a ejecutar
+ENV, contenido de dprueba.  
+WORKDIR, cambia el directorio por defecto.  
+EXPOSE, expone un puerto distinto.  
+LABEL, se indica el numero de versión, es una etiqueta.  
+USER, que usuario ejecuta la tarea.  
+VOLUME, guarda los datos para que sean persistentes.  
+CMD = Comando a ejecutar.
 
 
-`docker run -d -p 80:80 apache-centos:apache` 
-`docker run -d -p 80:80 nginx:v1` 
-`docker run -d -p 80:80 apache:php`
+`docker run -d -p 80:80 apache-centos:apache`  
+`docker run -d -p 80:80 nginx:v1`  
+`docker run -d -p 80:80 apache:php`  
 `docker run -d -p 80:80 apache:boostrap`  
 `docker run -d -p 443:443 apache:sslOK`
 
 Creación de certificados
 
-´openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout docker.key -out docker.crt´
+`openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout docker.key -out docker.crt`
 
 
 979f519361744cd28a94ea5187ea97ff
