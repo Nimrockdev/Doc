@@ -45,24 +45,39 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 `docker search ubuntu:16.04`  
 
 ##Instalar por tag  
-`docker pull ubuntu:16.04`
+`docker pull ubuntu:16.04`cre
 
 ##Container en ejecucion  
 `docker ps`
 
 ##Container en ejecutados  
-`docker ps -a`
+`docker ps -a`  
+
+##Container, el ultimo creado  
+`docker ps -l`
 
 ##Estadísticas  
 `docker stats nombreImagen`
 
-##Estructura del contenedor, se pasa el run con el nombre del contenedor más el comando  
-`docker run ubuntu ls`
+##Limitar ram en contenedor, al arrancar
+`docker run -d -m "500mb" --name mongo2 mongo`  
 
-##Arranca el bash de linux  
+##Copiar ficheros  
+###Lo creamos  
+`echo ":)" > index.html`  
+###Lo copiamos  
+`docker cp index.html apache:/tmp`
+
+##Estructura del contenedor, se pasa el run con el nombre del contenedor más el comando  
+`docker run ubuntu ls`  
+
+##Arrancar contedor indicando que se destruya al salir
+`docker run --rm -ti --name centos centos bash` 
+
+##UBUNTU Arranca el bash de linux  
 `docker run -i -t ubuntu bash`
 
-##Arrancar Ubuntu de forma interactiva  
+###Arrancar Ubuntu de forma interactiva  
 `docker run -it ubuntu`
 
 ###Arrancar Ubuntu de forma interactiva con nombre  
@@ -144,7 +159,8 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 --change='CMD ["apache2ctl", "-D FOREGROUND"]' -c "EXPOSE 85"
 
 ##Crear Imagen  
-`docker build -t miweb /home/javier/miweb/`
+`docker build -t miweb /home/javier/miweb/`  
+
 ##Arrancar Imagen, se cambia el puerto  
 `docker run -d -p 85:80 miweb`  
 `docker run -d -p 8080:8080 jenkins`  
@@ -191,4 +207,7 @@ Creación de certificados
 `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout docker.key -out docker.crt`
 
 
+##Recargar Docker
+`systemctl daemon-reloaded`  
+`systemctl restart docker`
 979f519361744cd28a94ea5187ea97ff
