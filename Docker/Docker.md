@@ -98,6 +98,8 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 
 ###MYSQL, para ver el estado del contenedor  
 `docker logs -f my-db1`
+Para salir  
+`Ctrl+C`
 
 ###MYSQL, para ver los datos  
 `docker inspect my-db1`  
@@ -194,6 +196,15 @@ LABEL, se indica el numero de versión, es una etiqueta.
 USER, que usuario ejecuta la tarea.  
 VOLUME, guarda los datos para que sean persistentes.  
 CMD = Comando a ejecutar.
+
+
+
+##VOLUME  
+###HOST, se alamacenan en docker host  
+`docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" -v /home/javier/Documentos/mysql:/var/lib/mysql mysql`
+ 
+###ANONYMOUS, docker genera una carpeta para guardarlos  
+###NAMED VOLUMENES, volumenes creados por usuario, administradas por docker, tienen nombre  
 
 
 `docker run -d -p 80:80 apache-centos:apache`  
