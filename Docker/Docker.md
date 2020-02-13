@@ -204,7 +204,21 @@ CMD = Comando a ejecutar.
 `docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" -v /home/javier/Documentos/mysql:/var/lib/mysql mysql`
  
 ###ANONYMOUS, docker genera una carpeta para guardarlos  
+`docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" -v /var/lib/mysql mysql`  
+
 ###NAMED VOLUMENES, volumenes creados por usuario, administradas por docker, tienen nombre  
+
+###Para saber donde esta el directorio de volumenes
+`docker info | grep -i root`
+
+###Listar Volúmenes
+`docker volume ls`  
+
+###Eliminar Volúmenes que no sean utilizados  
+`docker volume prune`  
+
+###Crear Volúmenes Nombrados 
+docker volume create mysql-data 
 
 
 `docker run -d -p 80:80 apache-centos:apache`  
