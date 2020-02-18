@@ -220,6 +220,31 @@ CMD = Comando a ejecutar.
 ###Crear Volúmenes Nombrados 
 docker volume create mysql-data 
 
+##Redes  
+###Visualizar las redes  
+`docker network ls`  
+
+###Crear red
+`docker network create test01`  
+`docker network create -d bridge --subnet 172.124.10.0/24 --gateway 172.124.0.1 test01`  
+
+###Ver red  
+`docker network inspect nombrered`  
+
+###Iniciar contenedor a una red
+`docker run --network nombrered -d --name test -ti centos`  
+
+###Conectar contenedor a una red  
+`docker network connect nombrered contenedor`
+
+###Eliminar contenedor  
+`docker network rm nombrered`  
+
+###Asignar IP a contenedor  
+`docker run --network nombrered --ip 172.128.10.50 -d --name test -ti centos` 
+
+
+
 
 `docker run -d -p 80:80 apache-centos:apache`  
 `docker run -d -p 80:80 nginx:v1`  
