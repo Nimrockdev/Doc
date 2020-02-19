@@ -57,7 +57,12 @@ Eliminar repositorios
 Consolidar Cambios  
 	
     git commit  
-    git commit -m 'mensaje de confirmacion'
+    git commit -m 'mensaje de confirmacion'  
+
+Eliminar cambios que no están guardados
+
+	 git checkout -- file
+
 
 Eliminar último Commit, si no se ha enviado al origen
 
