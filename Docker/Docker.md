@@ -241,7 +241,26 @@ docker volume create mysql-data
 `docker network rm nombrered`  
 
 ###Asignar IP a contenedor  
-`docker run --network nombrered --ip 172.128.10.50 -d --name test -ti centos` 
+`docker run --network nombrered --ip 172.128.10.50 -d --name test -ti centos`  
+
+
+##Docker Compose  
+###Instalación
+`sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose  
+
+###Permisos
+`sudo chmod +x /usr/local/bin/docker-compose`  
+
+###Llamada  
+`docker-compose up -d`  
+`docker-compose -f docker-compose.yml up -d`  
+
+
+###Parar Compose  
+`docker-compose down`  
+
+###Docker compose mas DockerFile  
+`docker-compose build`  
 
 
 
