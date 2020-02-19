@@ -255,6 +255,8 @@ docker volume create mysql-data
 `docker-compose up -d`  
 `docker-compose -f docker-compose.yml up -d`  
 
+###Cambiando el nombre, mas bien el prefijo  
+`docker-compose -f -p webtest docker-compose.yml up -d`
 
 ###Parar Compose  
 `docker-compose down`  
@@ -262,14 +264,23 @@ docker volume create mysql-data
 ###Docker compose mas DockerFile  
 `docker-compose build`  
 
+###Compose Logs
+`docker-compose logs -f`  
+
+##Docker Registry, sevicio local para imagenes
+
+
+###Restart:  
+no, always, on-failure, unless-stopped
 
 
 
-`docker run -d -p 80:80 apache-centos:apache`  
-`docker run -d -p 80:80 nginx:v1`  
-`docker run -d -p 80:80 apache:php`  
-`docker run -d -p 80:80 apache:boostrap`  
-`docker run -d -p 443:443 apache:sslOK`
+
+
+
+
+
+
 
 Creación de certificados
 
@@ -279,4 +290,13 @@ Creación de certificados
 ##Recargar Docker
 `systemctl daemon-reloaded`  
 `systemctl restart docker`
-979f519361744cd28a94ea5187ea97ff
+
+
+##Otros
+979f519361744cd28a94ea5187ea97ff  
+
+`docker run -d -p 80:80 apache-centos:apache`  
+`docker run -d -p 80:80 nginx:v1`  
+`docker run -d -p 80:80 apache:php`  
+`docker run -d -p 80:80 apache:boostrap`  
+`docker run -d -p 443:443 apache:sslOK`

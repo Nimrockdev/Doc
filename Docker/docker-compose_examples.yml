@@ -6,7 +6,7 @@ services:
             - "8080:80"
         image: nginx
 
-
+##Volumes
 version: '3'
 services:
     web:
@@ -19,7 +19,7 @@ services:
 volumes:
     vol2:
 
-
+##Variables
 version: '3'
 services:
     db:
@@ -31,7 +31,8 @@ services:
             - "MYSQL_ROOT_PASSWORD=1234567"
 
 
-            version: '3'
+##Red
+version: '3'
 services:
     web:
         container_name: nginx2
@@ -51,6 +52,7 @@ networks:
   net-test:
 
 
+##Limitado
 version: '3'
 services:
     web:
@@ -72,3 +74,54 @@ services:
                           reservations:
                             cpus: '0.25'
                             memory: 20M
+
+##Reinicios
+version: '3'
+services:
+    test:
+        container_name: test
+        build: .
+        image: restart-image
+        restart: no, always, on-failure, unless-stopped
+
+##MariaDB + WordPress
+version: '3'
+ 
+services:
+  db:
+    container_name: wp-mysql
+    image: mariadb
+    volumes:
+       - $PWD/data:/var/lib/mysql
+    environment:
+       MYSQL_ROOT_PASSWORD: 12345678
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+    ports:
+       - "3307:3306"
+    expose:
+      - "3307"
+    networks:
+       - my_net
+    restart: on-failure
+ 
+  wp:
+    depends_on:
+       - db
+    container_name: wp-web
+    volumes:
+       - "$PWD/html:/var/www/html"
+    image: wordpress
+    ports:
+       - "8010:80"
+    environment:
+       WORDPRESS_DB_HOST: "db:3306"
+       WORDPRESS_DB_USER: "wordpress"
+       WORDPRESS_DB_PASSWORD: "wordpress"
+    networks:
+       - my_net
+
+networks:
+  my_net:       
+
