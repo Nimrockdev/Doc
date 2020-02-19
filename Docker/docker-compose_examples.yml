@@ -1,0 +1,74 @@
+version: '3'
+services:
+    web:
+        container_name: nginx
+        ports:
+            - "8080:80"
+        image: nginx
+
+
+version: '3'
+services:
+    web:
+        container_name: nginx
+        ports:
+            - "8080:80"
+        volumes:
+            - "vol2:/usr/share/nginx/html"
+        image: nginx
+volumes:
+    vol2:
+
+
+version: '3'
+services:
+    db:
+        container_name: mysql
+        ports:
+            - "3306:3306"
+        image: mysql:5.7
+        environment: 
+            - "MYSQL_ROOT_PASSWORD=1234567"
+
+
+            version: '3'
+services:
+    web:
+        container_name: nginx2
+        ports:
+            - "8081:80"
+        image: httpd
+        networks: 
+            - net-test
+    web2:
+        container_name: nginx3
+        ports:
+            - "8082:80"
+        image: httpd
+        networks: 
+            - net-test
+networks:
+  net-test:
+
+
+version: '3'
+services:
+    web:
+        container_name: web
+        image: web-test
+        build:
+            context: .
+            dockerfile: DockerFile
+            version: '3.7'
+            services:
+                web:
+                    container_name: nginx
+                    image: nginx:alpine
+                    deploy:
+                        resources:
+                          limits:
+                            cpus: '0.50'
+                            memory: 50M
+                          reservations:
+                            cpus: '0.25'
+                            memory: 20M
