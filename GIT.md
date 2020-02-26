@@ -307,7 +307,11 @@ Trasladar a la rama master un commit determinado de una rama sin mergear toda la
 
 Para cambiar de la rama de trabajo a otra sin guardar las modificaciones no confirmadas.
 	
-	git stash  
+	git stash
+
+Para guardar stash con un nombre.  
+
+	git stash save "Requisito 01"   
 
 Para visualizar los stash.  
 El stash{0} siempre es el cambio mas actual, en la parte superior de la lista.  
@@ -326,6 +330,7 @@ Para recuperar el trabajo incompleto de la list.
 Para eliminar un stash de la lista.  
 
 	git stash drop stash@{0}
+
 
 # VIM #
 
