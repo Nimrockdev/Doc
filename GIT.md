@@ -323,6 +323,10 @@ Para recuperar el trabajo incompleto de la list.
 	git stash apply stash@{0}  
 	git stash apply stash@{1}
 
+Para eliminar un stash de la lista.  
+
+	git stash drop stash@{0}
+
 # VIM #
 
 Para conflictos, revisar el Doc/VIM
@@ -340,4 +344,4 @@ Si queremos que caduque en una hora
 	
 	
 	
->En desarrollo, disculpad las molestias
+>En desarrollo
