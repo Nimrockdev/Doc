@@ -4,7 +4,7 @@
 
 `vim fichero.txt`  
 
-Esc para situarnos en el la parte inferior en modo normal y:
+Para situarnos en el la parte inferior, pulsar `Esc`:
 
 	:q  	Sale del archivo, si no tenemos cambios sin guardar sale sin más.
 	:q! 	Sale del archivo descartando los cambios no guardados.
