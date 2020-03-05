@@ -18,7 +18,7 @@
 - TODO Tree
 
 
-# Comentarios  
+# Comentarios, linux  
 'V-1.39.2'  
 En bloque `Ctrl + May + A`
 
