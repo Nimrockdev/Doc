@@ -257,8 +257,9 @@ Rebase y merge se diferencian en que merge mezcla dos puntos finales de dos snap
 
 ## Etiquetas
 
-Se recomienda crear etiquetas para cada nueva versión publicada de un  Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando
-		git tag 1.0.0 1b2e1d63ff
+Se recomienda crear etiquetas para cada nueva versión publicada de un  Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando  
+
+	git tag 1.0.0 1b2e1d63ff
 
 	1b2e1d63ff se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. 
 
@@ -269,7 +270,14 @@ Se recomienda crear etiquetas para cada nueva versión publicada de un  Puedes c
 
 
 	Subir Etiquetas
-	git push origin --tags 
+	git push origin --tags  
+
+###Para eliminarlo en local  
+	`git tag --delete nombretag`
+
+###Para eliminarlo en servidor  
+	`git push --delete origin nombretag`
+	
 
 ## Obtener usuario y email
 
