@@ -1,4 +1,4 @@
-#Mongo
+#Mongo en linux
 [Mongo](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#start-mongodb
 )
 
@@ -23,7 +23,7 @@
 [Robo 3T](https://robomongo.org)
 [Robo 3T He usado este](https://www.dotnetjalps.com/2018/03/install-robo3t-robmongo-ubuntu.html)
 
-##Para abrilo
+##Para abrirlo
 /usr/local/bin/robo3t/bin$ 
 `./robo3t`
 
