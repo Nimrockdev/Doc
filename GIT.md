@@ -79,16 +79,16 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 
 ## Crear rama  
 
-	git branch 					#lista ramas
-	git branch <nombre-rama> 			#crea rama. Puntero al commit actual
-	git checkout -b <nombre-rama> 			#crea y cambia de rama
-	git merge <rama> 				#Mezcla la rama actual con <rama> remota
-	git branch -d <rama> 				#elimina la rama
+	git branch 									#lista ramas
+	git branch <nombre-rama> 					#crea rama. Puntero al commit actual
+	git checkout -b <nombre-rama> 				#crea y cambia de rama
+	git merge <rama> 							#Mezcla la rama actual con <rama> remota
+	git branch -d <rama> 						#elimina la rama
 	git push origin --delete <branchName> 		#Elimina una rama del servidor
-	git branch -v 					#lista ramas mostrando último commit
-	git branch --merged 				#lista ramas que han sido mezcladas con la actual.
-							 Si no tienen un *, pueden borrarse, ya que significa que se han 								 incorporado los cambios en la rama actual.
-	git branch --no-merged 				#lista ramas que no han sido incorporadas a la actual
+	git branch -v 								#lista ramas mostrando último commit
+	git branch --merged 						#lista ramas que han sido mezcladas con la actual.
+							 					Si no tienen un *, pueden borrarse, ya que significa que se han incorporado los cambios en la rama actual.
+	git branch --no-merged 						#lista ramas que no han sido incorporadas a la actual
 
 ## Cambiar de rama  
 
@@ -97,11 +97,11 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 		Ejemplo:
 		git branch origin/prod       		 # en caso de no tenerla se crea la rama origin/prod
 		git branch -a                		 # comprobar que realmente estamos en master
-		git branch --track prod origin/prod  	 # si no lo tenemos ya asocia prod a origin/prod
+		git branch --track prod origin/prod  # si no lo tenemos ya asocia prod a origin/prod
 		git checkout prod            		 # cambiamos a la rama prod
 		git merge master             		 # se merguean los cambios desde master a prod
 		git push                     		 # se suben los cambios del repositorio local al remoto
-		git pull				 # se bajan los cambios al repositorio local Ramas Remotas
+		git pull				 			 # se bajan los cambios al repositorio local Ramas Remotas
 
 ## En el momento de trabajar:
 
@@ -150,6 +150,13 @@ Conectar a un repositorio local a uno remoto
 
     git remote add origin <server>	#Ruta del servidor
     git remote add origin https://github.com/xx/xx.git
+
+
+Cambiar la url del repositorio  
+	
+	git remote set-url origin git@github.com:user/project.git
+	git remote set-url origin https://github.com/user/project.git  
+
 
 Eliminar ficheros del repositorio
  
