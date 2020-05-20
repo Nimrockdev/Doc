@@ -242,8 +242,7 @@ Para deshacer todos los cambios locales y commits realizados, podemos recuperar 
 	git reset --hard origin/master
 
 ## REBASE
-Rebase y merge se diferencian en que merge mezcla dos puntos finales de dos snapshots y rebase aplica cada uno de los cambios a la rama en la que se hace el rebase. No lo uses en repos publicos con mas colaboradores, porque todos los demas tendrán que hacer re-merges.  
->PE
+Rebase aplica los cambios al final de la rama master.
 
     git checkout <una rama>
     git rebase master # aplica todos los cambios de <una rama> a master
