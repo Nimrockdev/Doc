@@ -5,8 +5,10 @@
   
 
 ## Puesta en marcha  
+
 `npm star`
 
-# Segunda Fase, distribución  
+# Segunda Fase, distribución    
+
 `npm install electron-builder --save-dev`
 
