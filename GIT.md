@@ -59,6 +59,10 @@ Consolidar Cambios
     git commit  
     git commit -m 'mensaje de confirmacion'  
 
+Cambiar el mensaje del último commit. Esta instrucción abre el editor por defecto permitiendo editar el mensaje, al guardar se actualiza.  
+
+	git commit --amend
+
 Eliminar cambios que no están guardados
 
 	 git checkout -- file
