@@ -250,7 +250,7 @@ Se realiza al realizar commit entre ramas que no presentan conflictos.
 Se suele hacer por ejemplo: entre rama_original (sin cambios) y rama que parte de original.
 
 ## REBASE
-Añade los cambios de la rama a integrar en la rama develop eliminando el historial de cambios, hace que sea mas simple el historial.
+Añade los cambios de la rama a integrar en la rama develop eliminando el historial de cambios, hace que sea más simple el historial.
 
  
 
