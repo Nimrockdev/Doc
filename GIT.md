@@ -245,25 +245,14 @@ Para deshacer todos los cambios locales y commits realizados, podemos recuperar 
 	git fetch origin
 	git reset --hard origin/master
 
+## Fast Forward  
+Se realiza al realizar commit entre ramas que no presentan conflictos.
+Se suele hacer por ejemplo: entre rama_original (sin cambios) y rama que parte de original.
+
 ## REBASE
-Rebase aplica los cambios al final de la rama master.
+Añade los cambios de la rama a integrar en la rama develop eliminando el historial de cambios, hace que sea mas simple el historial.
 
-    git checkout <una rama>
-    git rebase master # aplica todos los cambios de <una rama> a master
-    git merge master # hay que hacer un merge de tipo fast forward
-    Tenemos 3 ramas, master, client y server, en server y client tenemos varios commit y queremos mezclar client en master pero dejar server intacta:
-        git rebase --onto master server client # adivina los patches del antecesor común de las ramas server y client y aplica los cambios a master.
-        git checkout master
-        git merge client # fast-forward. Client y master en el mismo snapshot
-
-    Si se quiere aplicar también los cambios de server, basta con:
-        git rebase master server
-        git checkout master
-        git merge server
-
-    git rebase [basebranch] [topicbranch] # sintaxis de rebase
-
-    git rebase -i # Rebase interactivo
+ 
 
 ## Etiquetas
 
