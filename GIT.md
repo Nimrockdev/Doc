@@ -339,6 +339,8 @@ Para eliminar un stash de la lista.
 	git stash drop stash@{0}
 
 
+
+
 # VIM #
 
 Para conflictos, revisar el Doc/VIM
@@ -353,7 +355,20 @@ Si queremos que caduque en una hora
 
 	git config --global credential.helper 'cache --timeout=3600'
 	
-	
-	
-	
+## Errores  
+
+### Bloqueo
+
+Existe un bloqueo por una operación sin finalizar.
+
+`Another git process seems to be running in this repository e.g. an editor opened by 'git commit'`
+
+Utilizar
+
+	rm -f .git/index.lock
+
+
+
+
+
 >En desarrollo
