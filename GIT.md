@@ -67,6 +67,17 @@ Eliminar cambios que no están guardados
 
 	 git checkout -- file
 
+Mensaje recomendado para commit  
+
+	Título: Resumen de los cambios 
+
+	Explicación en mas detalle: 
+	- Detalle 1
+	- Detalle 2
+	
+	Pie: IDs de issue trackers...
+	Resuelve: #001
+	Afecta a: #254, #454
 
 Eliminar último Commit, si no se ha enviado al origen
 
