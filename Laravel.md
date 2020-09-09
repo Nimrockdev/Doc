@@ -4,8 +4,9 @@
 
 ## Crear Proyecto, dentro de:  
 `C:\wamp64\www\curso-laravel\probando-laravel`  
-`composer create-project laravel/laravel probando-laravel  --prefer-dist`  
-### Para instalar una versión especifica  
+`composer create-project laravel/laravel probando-laravel  --prefer-dist` 
+
+## Para instalar una versión especifica  
 `composer create-project laravel/laravel proyecto "5.2.*"`
 
 ## Comprobar que laravel esta instalado  
@@ -15,6 +16,7 @@
 `php artisan --version`  
 
 # Host Virtual, Dominio Virtualizado httpd-vhosts.conf
+Esta en `C:\wamp64\bin\apache\apache2.4.46\conf\extra`
 
     #VHOST Curso LARAVEL P1
     <VirtualHost *:80>
@@ -30,11 +32,14 @@
     </VirtualHost> 
 
 ## Descomentar en httpd.conf
-    LoadModule rewrite_module modules/mod_rewrite.so  
+Esta en `C:\wamp64\bin\apache\apache2.4.46\conf`
 
+    LoadModule rewrite_module modules/mod_rewrite.so  
 
 ## En host  
     127.0.0.1 cursolaravel1.com.devel
 
-# Routes.php es web.php
+# OJO
+Routes.php es web.php
+Esta en `C:\wamp64\www\curso-laravel\probando-laravel\routes`
 
