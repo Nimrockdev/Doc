@@ -5,3 +5,8 @@
 
 ##Creación del proyecto, instalar dependencias
     npm start
+
+
+##Snipped, para FC
+    `rafc`
+    `rafce`
