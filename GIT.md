@@ -41,9 +41,18 @@ Visualizar Ramas remotas
 
     git branch -r
 
+Eliminar Rama  
+
+	git branch -d rama_nombre
+	git branch -D rama_nombre-rama  
+
+Elimminar rama remota  
+
+	git push origin :rama_nombre
+
 Visualizar Otras formas
 	
-    git ls-remote, muestra el SHA1 del último commit
+    git ls-remote, muestra el SHA1 del último commit1
     git remote  
 	
 Visualizar los diferentes repositorios  
