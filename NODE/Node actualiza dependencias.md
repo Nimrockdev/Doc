@@ -1,14 +1,7 @@
 #Actualiza las dependencias  
 
-`ncu -u --packageFile package.json`  
+    npm install -g npm-check-updates  
+    nuc  
+    ncu -u  o ncu -a
 
-`npm install` 
-
-#Deprecated
-    npm i -g npm-check-updates
-
-    npm-check-updates -u
-
-    npm install
-
-    [https://ed.team/blog/evita-errores-actualizando-tus-dependencias-de-npm](https://ed.team/blog/evita-errores-actualizando-tus-dependencias-de-npm)
+    [https://www.campusmvp.es/recursos/post/truco-actualizar-a-la-ultima-las-versiones-de-dependencias-npm-en-package-json.aspx](https://www.campusmvp.es/recursos/post/truco-actualizar-a-la-ultima-las-versiones-de-dependencias-npm-en-package-json.aspx)
