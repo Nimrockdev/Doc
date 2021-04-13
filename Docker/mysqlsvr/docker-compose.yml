@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mysqlsvr:
+    image: mysql:5.7
+    volumes:
+      - $PWD/data:/var/lib/mysql01
+    environment:
+      MYSQL_ROOT_PASSWORD: "12345678"
+      MYSQL_DATABASE: "db01"
+      MYSQL_USER: "jsanchez"
+      MYSQL_PASSWORD: "12345678"
+    ports:
+      - "3306:3306"
+    expose:
+      - 3307
+    networks:
+       - my_net
+    restart: on-failure
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+       - my_net
+networks:
+  my_net:
+    driver: bridge
