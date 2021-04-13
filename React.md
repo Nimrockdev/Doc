@@ -1,12 +1,12 @@
-#React
+# React
 
-##Crear aplicación  
+## Crear aplicación  
     npx create-react-app my-app intro-javascript  
 
-##Creación del proyecto, instalar dependencias
+## Creación del proyecto, instalar dependencias
     npm start
 
 
-##Snipped, para FC
+## Snipped, para FC
     `rafc`
     `rafce`

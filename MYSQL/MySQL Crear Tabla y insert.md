@@ -1,6 +1,6 @@
-#Crear Tabla
+# Crear Tabla
 
-CREATE TABLE IF NOT EXISTS `cliente` (  
+CREATE TABLE IF NOT EXISTS `clientes` (  
 `nif` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Clave primaria',
   `nombre` varchar(50) NOT NULL COMMENT 'nombre cliente',
   `apellidos` varchar(100) NOT NULL COMMENT 'Apellidos cliente',
@@ -30,9 +30,4 @@ fecha_date DATE,
 idCliente int
 );
 
-CREATE TABLE INVOICE( 
-idInvoice int PRIMARY KEY NOT NULL, 
-fecha_date DATE, 
-idCliente int
-);
-INSERT INTO INVOICE( idInvoice, fecha_date, idCliente) values (1, curdate(), 1 )
+  INSERT INTO INVOICE( idInvoice, fecha_date, idCliente) values (1, curdate(), 1 )
