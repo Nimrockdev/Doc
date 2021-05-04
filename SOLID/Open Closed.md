@@ -10,11 +10,11 @@ Un posible ejemplo sería una clase que calcula el area de un rectangulo. El dis
 Una posible solución sería crear una clase base y una función que calcula el area, ya que solo haria falta que esta preguntase que tipo de figura és.
 
 
-    interface IsShape{
+    interface IShape{
         function area():number;
     }
 
-    class Rectangle implements IsShape{
+    class Rectangle implements IShape{
         width: number;
         height: number;
         function area(){
@@ -22,7 +22,7 @@ Una posible solución sería crear una clase base y una función que calcula el 
         }
     }
 
-    class Triangle implements IsShape{
+    class Triangle implements IShape{
         width: number;
         height: number;
         function area(){
