@@ -2,7 +2,7 @@
 
 ## Inversión de la dependencia.
 
-Los modulos de alto nivel, no deven de depender de los modulos de bajo nivel.
+Los modulos de alto nivel, no deben de depender de los modulos de bajo nivel.
 Las implemetanciones concretas, no deben de depender de otras implementaciones concretas. Con ello se consigue reducir el desacople entre el sistema de software.
 
 
