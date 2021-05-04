@@ -2,7 +2,7 @@
 
 ## Principio de sustituciion de Liskov
 
-Toda clase que sea herede de una clase, debe de poderse utilizar como si fuese la clase base. Es decir, quien utilice la clase base, no debe de comportarse de forma diferente utilizando cualquiera de sus descendientes.
+Toda clase que sea heredada de una clase, debe de poderse utilizar como si fuese la clase base. Es decir, quién utilice la clase base, no debe de comportarse de forma diferente utilizando cualquiera de sus descendientes.
 
     interface IFly{
         function fly():void;
