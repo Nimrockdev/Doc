@@ -1,6 +1,6 @@
 # Liskov Sustitution
 
-## Principio de sustituciion de Liskov
+## Principio de sustitución de Liskov
 
 Toda clase que sea heredada de una clase, debe de poderse utilizar como si fuese la clase base. Es decir, quién utilice la clase base, no debe de comportarse de forma diferente utilizando cualquiera de sus descendientes.
 
