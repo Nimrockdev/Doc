@@ -14,7 +14,7 @@
 `SELECT * FROM user;`
 
 ## Mostrar privilegios para usuario root
-`SHOW GRANTS for 'root'@'localhost';`
+`SHOW GRANTS for 'root'@'localhost';`  
 `SHOW GRANTS for 'mysql.sys'@'localhost';`
 
 ## Crear usuario con contraseña
