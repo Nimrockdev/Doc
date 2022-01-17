@@ -1,7 +1,7 @@
 # Crear Tabla
 
 CREATE TABLE IF NOT EXISTS `clientes` (  
-`nif` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Clave primaria',
+`nif` int(11) NOT NULL  COMMENT 'Clave primaria',
   `nombre` varchar(50) NOT NULL COMMENT 'nombre cliente',
   `apellidos` varchar(100) NOT NULL COMMENT 'Apellidos cliente',
   `telefono` int(9) NOT NULL COMMENT 'móvil',
