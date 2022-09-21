@@ -46,7 +46,7 @@ Eliminar Rama
 	git branch -d rama_nombre
 	git branch -D rama_nombre-rama  
 
-Elimminar rama remota  
+Eliminar rama remota  
 
 	git push origin :rama_nombre
 
