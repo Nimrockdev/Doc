@@ -103,15 +103,15 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 
 ## Crear rama  
 
-	git branch 									#lista ramas
+	git branch 							#lista ramas
 	git branch <nombre-rama> 					#crea rama. Puntero al commit actual
-	git checkout -b <nombre-rama> 				#crea y cambia de rama
-	git merge <rama> 							#Mezcla la rama actual con <rama> remota
+	git checkout -b <nombre-rama> 					#crea y cambia de rama
+	git merge <rama> 						#Mezcla la rama actual con <rama> remota
 	git branch -d <rama> 						#elimina la rama
-	git push origin --delete <branchName> 		#Elimina una rama del servidor
-	git branch -v 								#lista ramas mostrando último commit
+	git push origin --delete <branchName> 				#Elimina una rama del servidor
+	git branch -v 							#lista ramas mostrando último commit
 	git branch --merged 						#lista ramas que han sido mezcladas con la actual.
-							 					Si no tienen un *, pueden borrarse, ya que significa que se han incorporado los cambios en la rama actual.
+									Si no tienen un *, pueden borrarse, ya que significa que se han incorporado los cambios en la rama actual.
 	git branch --no-merged 						#lista ramas que no han sido incorporadas a la actual
 
 ## Cambiar de rama  
@@ -278,25 +278,21 @@ Añade los cambios de la rama a integrar en la rama develop eliminando el histor
 
 Se recomienda crear etiquetas para cada nueva versión publicada de un  Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando  
 
-	git tag 1.0.0 1b2e1d63ff
-
-	1b2e1d63ff se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. 
+	git tag -a v1.4.0 -m "my version 1.4.0"
 
 	Puedes obtener el commit id con, para salir q+Enter
 		git log
 
-	también puedes usar menos caracteres que el commit id, pero debe ser un valor único. 
-
-
 	Subir Etiquetas
 	git push origin --tags  
 
-###Para eliminarlo en local  
+### Para eliminarlo en local  
 	`git tag --delete nombretag`
 
-###Para eliminarlo en servidor  
-	`git push --delete origin nombretag`
+### Para eliminarlo en servidor  
+	`git push --delete origin nombretag`  
 	
+### Para listar	
 
 ## Obtener usuario y email
 
