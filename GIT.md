@@ -148,6 +148,14 @@ Al mergear ramas, pueden existir conflictos, en este caso hay que revisar los fi
 	Iterfaz para git-diff que acepta los argumentos de git diff
 		git difftool -d master rama2
 
+## Comparar cambios recientes con el anterior  
+	git diff HEAD^ HEAD				Compara HEAD^, el penúltimo commit con HEAD, el último commit
+	git diff HEAD^					Mismo resulta que el anterior  
+	git diff HEAD^.. --name-status			Listar archivos afectados  
+	git diff HEAD^.. -- ./file2.txt			Listar cambios de un fichero concreto  
+	git diff HEAD^.. --stat				Listar el stat de los ficheros afectados
+	git diff HEAD~3					Listar cambios entre el commit actual y 3 commits anteriores  
+	
 ## En el momento de trabajar:
 
 ![GIT Flow](https://docs.microsoft.com/es-es/azure/architecture/framework/_images/hotfix-branches.png)
