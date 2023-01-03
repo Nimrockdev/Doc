@@ -100,7 +100,8 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 
     git reset HEAD^ --hard  
     git push origin -f
-
+	
+	
 ## Crear rama  
 
 	git branch 							#lista ramas
@@ -126,6 +127,12 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 		git merge master             		 # se merguean los cambios desde master a prod
 		git push                     		 # se suben los cambios del repositorio local al remoto
 		git pull				 			 # se bajan los cambios al repositorio local Ramas Remotas
+
+
+
+Al mergear ramas, pueden existir conflictos, en este caso hay que revisar los ficheros.  
+- Eliminar el commit pendiente si exiten conflictos  
+	git merge --abort
 
 ## En el momento de trabajar:
 
