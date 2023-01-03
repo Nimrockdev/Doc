@@ -120,13 +120,13 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 	git checkout rama
 	
 		Ejemplo:
-		git branch origin/prod       		 # en caso de no tenerla se crea la rama origin/prod
-		git branch -a                		 # comprobar que realmente estamos en master
-		git branch --track prod origin/prod  # si no lo tenemos ya asocia prod a origin/prod
-		git checkout prod            		 # cambiamos a la rama prod
-		git merge master             		 # se merguean los cambios desde master a prod
-		git push                     		 # se suben los cambios del repositorio local al remoto
-		git pull				 			 # se bajan los cambios al repositorio local Ramas Remotas
+		git branch origin/prod       		 	 En caso de no tenerla se crea la rama origin/prod
+		git branch -a                		 	 Vomprobar que realmente estamos en master
+		git branch --track prod origin/prod  		 Si no lo tenemos ya asocia prod a origin/prod
+		git checkout prod            		 	 Cambiamos a la rama prod
+		git merge master             		 	 Se merguean los cambios desde master a prod
+		git push                     		 	 Se suben los cambios del repositorio local al remoto
+		git pull				 	 Se bajan los cambios al repositorio local Ramas Remotas
 
 
 
