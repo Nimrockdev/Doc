@@ -128,12 +128,24 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 		git push                     		 	 Se suben los cambios del repositorio local al remoto
 		git pull				 	 Se bajan los cambios al repositorio local Ramas Remotas
 
-
+## git-difftool
+	Iterfaz para git-diff que acepta los argumentos de git diff
+	git difftool -d master rama2
 
 Al mergear ramas, pueden existir conflictos, en este caso hay que revisar los ficheros.  
 - Eliminar el commit pendiente si exiten conflictos  
 	git merge --abort
 
+## Comparar
+    git diff							Comparar cambios en el directorio  
+    git diff file						Comparar cambios para el fichero  
+    git diff <source_branch> <target_branch>			Comparar ramas  
+    git diff 55a55 44m22					Comparar commits  
+    git diff HEAD						Comparar directorio de trabajo con el HEAD  
+    git diff master rama2 -- test.text				Comparar ficheros en ramas  
+    git diff master..develop > diffFile.diff			Genera la salida a un fichero
+    git diff --name-status master..rama2			Visualiza el estado de los ficheros  
+    git diff --stat master..rama2				Visualiza el diffstat de los ficheros
 ## En el momento de trabajar:
 
 ![GIT Flow](https://docs.microsoft.com/es-es/azure/architecture/framework/_images/hotfix-branches.png)
@@ -248,33 +260,33 @@ La rama master es la rama "por defecto" cuando creas un repositorio.
 	Una rama nueva no estará disponible para los demás a menos que subas (push) la rama a tu repositorio remoto
 		git push origin <branch>
 
-## Actualiza & Fusiona
+## Actualizar ramas
 
-Para actualizar tu repositorio local al commit más nuevo, ejecuta  
-
-    git pull	
-	
-en tu directorio de trabajo para bajar y fusionar los cambios remotos.
-Para fusionar otra rama a tu rama activa,
+Para fusionar ramas locales, partimos que nos traemos los cambios a la rama donde estamos posicionados.
 
     git merge <branch>
 
-en ambos casos git intentará fusionar automáticamente los cambios. Es posible que se produzcan conflictos. Somos los responsables de solucionar los conflictos manualmente al editar los archivos mostrados por git. Después de editarlos, los marcaremos como editados
+Para actualizar tu repositorio local al commit más nuevo del repositorio.  
 
-    git add <filename>
+    git pull origin master	
+
+Git pull combina git fetch y git merge,el pirmero descarga la copia remota u el segundo combina los cambios locales y remotos.
+
+En ambos casos git intentará fusionar automáticamente los cambios. Es posible que se produzcan conflictos. Somos los responsables de solucionar los conflictos manualmente al editar los archivos mostrados por git. 
+
 	
-Antes de fusionar podemos revisar los cambios
 
-    git diff <source_branch> <target_branch>
 
 Para deshacer todos los cambios locales y commits realizados, podemos recuperar la versión del servidor y apuntar a tu copia local principal de esta forma.
 
 	git fetch origin
 	git reset --hard origin/master
 
+
 ## Fast Forward  
 Se realiza al realizar commit entre ramas que no presentan conflictos.
 Se suele hacer por ejemplo: entre rama_original (sin cambios) y rama que parte de original.
+
 
 ## REBASE
 Añade los cambios de la rama a integrar en la rama develop eliminando el historial de cambios, hace que sea más simple el historial.
