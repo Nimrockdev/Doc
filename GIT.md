@@ -20,10 +20,10 @@ Para iniciar proyecto
     git init
 
 Añadir Ficheros  
-
-    git add .			#todos los ficheros
-    git add nombre_fichero
-    git add <dir>		#añade recursivamente todos los archivos del dir.
+	 
+	git add .	 	 Añadir todos los ficheros 	
+	git add nombre_fichero 	 Añadir por nombre de fichero  
+	git add <dir>		 Añade recursivamente todos los archivos del dir
 
 Diferencias  
 
