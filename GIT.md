@@ -102,18 +102,18 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
     git push origin -f
 	
 	
-## Crear rama  
+## Ramas 
 
-	git branch 							#lista ramas
-	git branch <nombre-rama> 					#crea rama. Puntero al commit actual
-	git checkout -b <nombre-rama> 					#crea y cambia de rama
-	git merge <rama> 						#Mezcla la rama actual con <rama> remota
-	git branch -d <rama> 						#elimina la rama
-	git push origin --delete <branchName> 				#Elimina una rama del servidor
-	git branch -v 							#lista ramas mostrando último commit
-	git branch --merged 						#lista ramas que han sido mezcladas con la actual.
+	git branch 							Lista ramas
+	git branch <nombre-rama> 					Crea rama. Puntero al commit actual
+	git checkout -b <nombre-rama> 					Crea y cambia de rama
+	git merge <rama> 						Mezcla la rama actual con <rama> remota
+	git branch -d <rama> 						Elimina la rama
+	git push origin --delete <branchName> 				Elimina una rama del servidor
+	git branch -v 							Lista ramas mostrando último commit
+	git branch --merged 						Lista ramas que han sido mezcladas con la actual.
 									Si no tienen un *, pueden borrarse, ya que significa que se han incorporado los cambios en la rama actual.
-	git branch --no-merged 						#lista ramas que no han sido incorporadas a la actual
+	git branch --no-merged 						Lista ramas que no han sido incorporadas a la actual
 
 ## Cambiar de rama  
 
