@@ -128,24 +128,26 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 		git push                     		 	 Se suben los cambios del repositorio local al remoto
 		git pull				 	 Se bajan los cambios al repositorio local Ramas Remotas
 
-## git-difftool
-	Iterfaz para git-diff que acepta los argumentos de git diff
-	git difftool -d master rama2
 
 Al mergear ramas, pueden existir conflictos, en este caso hay que revisar los ficheros.  
 - Eliminar el commit pendiente si exiten conflictos  
 	git merge --abort
 
 ## Comparar
-    git diff							Comparar cambios en el directorio  
-    git diff file						Comparar cambios para el fichero  
-    git diff <source_branch> <target_branch>			Comparar ramas  
-    git diff 55a55 44m22					Comparar commits  
-    git diff HEAD						Comparar directorio de trabajo con el HEAD  
-    git diff master rama2 -- test.text				Comparar ficheros en ramas  
-    git diff master..develop > diffFile.diff			Genera la salida a un fichero
-    git diff --name-status master..rama2			Visualiza el estado de los ficheros  
-    git diff --stat master..rama2				Visualiza el diffstat de los ficheros
+	    git diff							Comparar cambios en el directorio  
+	    git diff file						Comparar cambios para el fichero  
+	    git diff <source_branch> <target_branch>			Comparar ramas  
+	    git diff 55a55 44m22					Comparar commits  
+	    git diff HEAD						Comparar directorio de trabajo con el HEAD  
+	    git diff master rama2 -- test.text				Comparar ficheros en ramas  
+	    git diff master..develop > diffFile.diff			Genera la salida a un fichero
+	    git diff --name-status master..rama2			Visualiza el estado de los ficheros  
+	    git diff --stat master..rama2				Visualiza el diffstat de los ficheros  
+
+## git-difftool
+	Iterfaz para git-diff que acepta los argumentos de git diff
+		git difftool -d master rama2
+
 ## En el momento de trabajar:
 
 ![GIT Flow](https://docs.microsoft.com/es-es/azure/architecture/framework/_images/hotfix-branches.png)
