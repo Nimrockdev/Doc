@@ -20,5 +20,5 @@
 All databases  
 `mysqldump [opciones] --all-databases > dbsDump.sql`  
 
-DUMP con funciones y procedures  
+DUMP with functions, procedures and single-transaction
 `mysqldump --single-transaction --routines  -u root -p dbName > dbName.sql;`  
