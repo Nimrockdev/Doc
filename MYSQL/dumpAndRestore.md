@@ -1,12 +1,12 @@
-## With shema names 
+## With schema names 
 ### Dump
-`mysqldump --routines -u root -p dbName > dbName.sql;`  
+`mysqldump -B -u root -p dbName > dbName.sql;`  
 
 ### Restore
 `mysql -u root -p < dbName.sql;`
 
 
-## Without shema names 
+## Without schema names 
 ### Dump
 `mysqldump -p --user root dbName < dbName.sql;`  
 
