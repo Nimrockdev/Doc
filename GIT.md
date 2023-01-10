@@ -128,19 +128,6 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 		git push                     		 	 Se suben los cambios del repositorio local al remoto
 		git pull				 	 Se bajan los cambios al repositorio local Ramas Remotas
 
-
-Al mergear ramas, pueden existir conflictos, en este caso hay que revisar los ficheros.  
-- Eliminar el commit pendiente si exiten conflictos  
-	`git merge --abort`  
-	
-	
-Al hacer merge, puede que queramos forzar los cambios que entran y descartar los locales  
-
-	sudo git pull -s recursive -X theirs origin master  
-	sudo git checkout --theirs path/to/file
-
-
-
 ## Comparar
 	    git diff							Comparar cambios en el directorio  
 	    git diff file						Comparar cambios para el fichero  
@@ -292,7 +279,16 @@ Git pull combina git fetch y git merge,el pirmero descarga la copia remota u el 
 
 En ambos casos git intentará fusionar automáticamente los cambios. Es posible que se produzcan conflictos. Somos los responsables de solucionar los conflictos manualmente al editar los archivos mostrados por git. 
 
+  
+Al mergear ramas, pueden existir conflictos, en este caso hay que revisar los ficheros.  
+- Eliminar el commit pendiente si exiten conflictos  
+	`git merge --abort`  
 	
+	
+Al hacer merge, puede que queramos forzar los cambios que entran y descartar los locales  
+
+	sudo git pull -s recursive -X theirs origin master  
+	sudo git checkout --theirs path/to/file
 
 
 Para deshacer todos los cambios locales y commits realizados, podemos recuperar la versión del servidor y apuntar a tu copia local principal de esta forma.
