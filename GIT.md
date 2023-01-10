@@ -396,7 +396,7 @@ Para conflictos, revisar el Doc/VIM
 
 ## Credenciales
 
-Para evitar que git pregunte cada vez por las credenciales, activamos el store. la próxima vez que las utilicemos quedarán grabadas.
+Para evitar que git pregunte cada vez por las credenciales, activamos el store. La próxima vez que las utilicemos quedarán grabadas.
 
 	git config --global credential.helper store
 
@@ -420,4 +420,5 @@ Utilizar
 
 
 
->En desarrollo
+> En desarrollo  
+> Si quieres ayudar, adelante!
