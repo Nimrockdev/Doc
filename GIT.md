@@ -131,7 +131,15 @@ Eliminar el último commit, en este caso ya se ha enviado al repositorio remoto
 
 Al mergear ramas, pueden existir conflictos, en este caso hay que revisar los ficheros.  
 - Eliminar el commit pendiente si exiten conflictos  
-	git merge --abort
+	`git merge --abort`  
+	
+	
+Al hacer merge, puede que queramos forzar los cambios que entran y descartar los locales  
+
+	sudo git pull -s recursive -X theirs origin master  
+	sudo git checkout --theirs path/to/file
+
+
 
 ## Comparar
 	    git diff							Comparar cambios en el directorio  
