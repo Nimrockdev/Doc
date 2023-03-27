@@ -43,8 +43,8 @@ Visualizar Ramas remotas
 
 Eliminar Rama  
 
-	git branch -d rama_nombre
-	git branch -D rama_nombre-rama  
+	git branch -d rama_nombre, mergeada
+	git branch -D rama_nombre-rama , sin mergear
 
 Eliminar rama remota  
 
