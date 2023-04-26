@@ -1,10 +1,10 @@
 # Dependencias de node.js
 
-  ```
+```
   "dependencies": {
     "body-parser": "^1.20.2",
     }
-    
+ ```
    
    1 - Versión mayor
     Novedades importantes del paquete, contiene cambios importantes, puede que tenga incompatibilidades.
@@ -19,7 +19,7 @@
  "body-parser": "~1.2.4" > Instala solo los parches
  
  
- Actualización
+ # Actualización
  
  Mediante 'npm outdate' veremos las versiones actuales, a instalar y la última de los módules  
  
@@ -27,7 +27,7 @@
   body-parser                 1.14.1  1.20.2   1.20.2  node_modules/body-parser                XXXXX
   chai                         3.3.0   3.5.0    4.3.7  node_modules/chai                       XXXXX
 
-Usaremos npm -check para actualizar las dependecias  
+## Usaremos npm -check para actualizar las dependecias  
 ´npm install -g npm-check´  
 Mediante ´npm-check -u´ lanzaremos el menu interactivo donde podemos ver los paquetes separados por nivel de importancia.
 Este menú interactivo nos permite movernos con el cursor por la lista y selecionar con la tecla espacio los paquetes que queremos instalar.
