@@ -21,7 +21,7 @@
  
  # Actualización
  
- Mediante 'npm outdate' veremos las versiones actuales, a instalar y la última de los módules  
+ Mediante ´npm outdate´ veremos las versiones actuales, a instalar y la última de los módules  
  
  Package                    Current  Wanted   Latest  Location                                Depended by
   body-parser                 1.14.1  1.20.2   1.20.2  node_modules/body-parser                XXXXX
