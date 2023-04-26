@@ -1,9 +1,10 @@
-
 # Dependencias de node.js
 
+  ```
   "dependencies": {
     "body-parser": "^1.20.2",
     }
+    
    
    1 - Versión mayor
     Novedades importantes del paquete, contiene cambios importantes, puede que tenga incompatibilidades.
