@@ -10,3 +10,7 @@
 ## Snipped, para FC
     `rafc`
     `rafce`
+
+
+## Vite
+    yarn create vite
