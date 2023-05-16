@@ -14,3 +14,5 @@
 
 ## Vite
     yarn create vite
+    ...
+    yarn
