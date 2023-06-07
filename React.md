@@ -13,6 +13,7 @@
 
 
 ## Vite
-    yarn create vite
-    ...
-    yarn
+Crear proyecto
+    `yarn create vite`
+Instalar dependencias
+    `yar``
