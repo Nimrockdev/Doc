@@ -12,8 +12,12 @@
     `rafce`
 
 
-## Vite
+## Vite  
+
 Crear proyecto
-    `yarn create vite`
+
+   `yarn create vite`  
+
 Instalar dependencias
-    `yar``
+
+   `yar`
