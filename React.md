@@ -20,4 +20,4 @@ Crear proyecto
 
 Instalar dependencias
 
-   `yar`
+   `yarn`
