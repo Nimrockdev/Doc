@@ -3,7 +3,7 @@ Las imagenes Docker son plantillas (que incluyen una aplicación, los binarios y
 Los contenedores son instancias temporales de las imagenes. Para tener datos persistentes hay que indicarlo en el dockerfile al construir la imagen.
 
 ## Algunos comandos  
-`docker info`
+`docker info`  
 `docker version`
 
 ## Inspeccionar una imagen  
@@ -63,9 +63,9 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 `docker run -d -m "500mb" --name mongo2 mongo`  
 
 ## Copiar ficheros  
-## #Lo creamos  
+### Lo creamos  
 `echo ":)" > index.html`  
-## #Lo copiamos  
+### Lo copiamos  
 `docker cp index.html apache:/tmp`
 
 ## Estructura del contenedor, se pasa el run con el nombre del contenedor más el comando  
@@ -77,34 +77,34 @@ Los contenedores son instancias temporales de las imagenes. Para tener datos per
 ## UBUNTU Arranca el bash de linux  
 `docker run -i -t ubuntu bash`
 
-## #Arrancar Ubuntu de forma interactiva  
+### Arrancar Ubuntu de forma interactiva  
 `docker run -it ubuntu`
 
-## #Arrancar Ubuntu de forma interactiva con nombre  
+### Arrancar Ubuntu de forma interactiva con nombre  
 `docker run --name jsgvm -it ubuntu`
 
-## #Arrancar Ubuntu de forma interactiva, i= interactivo, t= terminal y COMMAND  
+### Arrancar Ubuntu de forma interactiva, i= interactivo, t= terminal y COMMAND  
 `docker run -i -t ubuntu bash`  
 
 ## JENKINS  
 `docker run -d -p 7070:8080 --name jenkins jenkins`  
 
-## #Jenkins de forma interactiva, i= interactivo, t= terminal y COMMAND  
+### Jenkins de forma interactiva, i= interactivo, t= terminal y COMMAND  
 `docker exec -ti jenkins-xxx bash`  
 
 ## Arrancar MYSQL  
 `docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" mysql`  
 `docker run -d -p 3333:3306 --name my-db2 -e "MYSQL_ROOT_PASSWORD=1234567" -e "MYSQL_DATABASE=docker-db" -e "MYSQL_USER=docker-user" -e "MYSQL_PASSWORD=7654321" mysql`
 
-## #MYSQL, para ver el estado del contenedor  
+### MYSQL, para ver el estado del contenedor  
 `docker logs -f my-db1`
 Para salir  
 `Ctrl+C`
 
-## #MYSQL, para ver los datos  
+### MYSQL, para ver los datos  
 `docker inspect my-db1`  
 
-## #MYSQL, conectarse
+### MYSQL, conectarse
 `mysql -u root -h 172.17.0.2 -p1234567`  
 `mysql -u root -p1234567 -h 127.0.0.2 --port 3333`  
 `mysql -u docker-user -p7654321 -h 127.0.0.2 --port 3333`
@@ -115,10 +115,10 @@ Para salir
 ## POSTGRES  
 `docker run -d --name postgres -e "POSTGRES_PASSWORD=1234567" -e "POSTGRES_USER=docker" -e "POSTGRES_DB=docker-db" -p 5432:5432 postgres`  
 
-## #POSTGRES, para acceder al bash
+### POSTGRES, para acceder al bash
 `docker exec -ti postgres bash`  
 
-## #POSTGRES, para conectarnos a la base de datos con usuario
+### POSTGRES, para conectarnos a la base de datos con usuario
 `psql -d docker-db -U docker`
 
 ## Arrancar un contenedor por ID  
@@ -127,7 +127,7 @@ Para salir
 ## Conectarse a un contenedor mediante COMMAND  
 `docker attach BASH`
 
-## #Conectarse a un contenedor mediante COMMAND  
+### Conectarse a un contenedor mediante COMMAND  
 `docker attach ID`  
 `docker attach 922`
 
@@ -200,77 +200,77 @@ CMD = Comando a ejecutar.
 
 
 ## VOLUME  
-## #HOST, se alamacenan en docker host  
+### HOST, se alamacenan en docker host  
 `docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" -v /home/javier/Documentos/mysql:/var/lib/mysql mysql`
  
-## #ANONYMOUS, docker genera una carpeta para guardarlos  
+### ANONYMOUS, docker genera una carpeta para guardarlos  
 `docker run -d --name my-db1 -e "MYSQL_ROOT_PASSWORD=1234567" -v /var/lib/mysql mysql`  
 
-## #NAMED VOLUMENES, volumenes creados por usuario, administradas por docker, tienen nombre  
+### NAMED VOLUMENES, volumenes creados por usuario, administradas por docker, tienen nombre  
 
-## #Para saber donde esta el directorio de volumenes
+### Para saber donde esta el directorio de volumenes
 `docker info | grep -i root`
 
-## #Listar Volúmenes
+### Listar Volúmenes
 `docker volume ls`  
 
-## #Eliminar Volúmenes que no sean utilizados  
+### Eliminar Volúmenes que no sean utilizados  
 `docker volume prune`  
 
-## #Crear Volúmenes Nombrados 
+### Crear Volúmenes Nombrados 
 docker volume create mysql-data 
 
 ## Redes  
-## #Visualizar las redes  
+### Visualizar las redes  
 `docker network ls`  
 
-## #Crear red
+### Crear red
 `docker network create test01`  
 `docker network create -d bridge --subnet 172.124.10.0/24 --gateway 172.124.0.1 test01`  
 
-## #Ver red  
+### Ver red  
 `docker network inspect nombrered`  
 
-## #Iniciar contenedor a una red
+### Iniciar contenedor a una red
 `docker run --network nombrered -d --name test -ti centos`  
 
-## #Conectar contenedor a una red  
+### Conectar contenedor a una red  
 `docker network connect nombrered contenedor`
 
-## #Eliminar contenedor  
+### Eliminar contenedor  
 `docker network rm nombrered`  
 
-## #Asignar IP a contenedor  
+### Asignar IP a contenedor  
 `docker run --network nombrered --ip 172.128.10.50 -d --name test -ti centos`  
 
 
 ## Docker Compose  
-## #Instalación
+### Instalación
 `sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose  
 
-## #Permisos
+### Permisos
 `sudo chmod +x /usr/local/bin/docker-compose`  
 
-## #Llamada  
+### Llamada  
 `docker-compose up -d`  
 `docker-compose -f docker-compose.yml up -d`  
 
-## #Cambiando el nombre, mas bien el prefijo  
+### Cambiando el nombre, mas bien el prefijo  
 `docker-compose -f -p webtest docker-compose.yml up -d`
 
-## #Parar Compose  
+### Parar Compose  
 `docker-compose down`  
 
-## #Docker compose mas DockerFile  
+### Docker compose mas DockerFile  
 `docker-compose build`  
 
-## #Compose Logs
+### Compose Logs
 `docker-compose logs -f`  
 
 ## Docker Registry, sevicio local para imagenes
 
 
-## #Restart:  
+### Restart:  
 no, always, on-failure, unless-stopped
 
 
