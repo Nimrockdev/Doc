@@ -1,4 +1,4 @@
-##Ubuntu
+## Ubuntu
 FROM ubuntu:16.04
 MAINTAINER jsanchez 
 RUN apt-get update 
@@ -6,7 +6,7 @@ RUN apt-get -y install apache2
 EXPOSE 81
 CMD /usr/sbin/apache2ctl -D FOREGROUND
 
-##Centos
+## Centos
 `FROM centos:7
 
 RUN yum install httpd -y
@@ -23,7 +23,7 @@ CMD apachectl DFOREGROUND
 `
 
 
-##nginx
+## nginx
 `FROM nginx
 
 RUN useradd jsanchez
