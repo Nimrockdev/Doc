@@ -407,6 +407,3 @@ Creación de certificados
 
 `docker run -d -p 443:443 apache:sslOK`
 
-## Ejemplos
-
-[DockerFiles](https://www.notion.so/DockerFiles-02b02b0864444bee9b5163932f3e834e?pvs=21)
